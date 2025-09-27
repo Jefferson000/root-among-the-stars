@@ -7,7 +7,7 @@ class_name State_Ide extends State
 func enter() -> void:
 	player.update_animation("idle")
 	pass
-	
+
 ## When the player leaves this state
 func exit() -> void:
 	pass
@@ -18,11 +18,11 @@ func process(_delta: float) -> State:
 		return walk
 	player.velocity = Vector2.ZERO
 	return null
-	
+
 ## During the _physics_process update in this State
 func physics(_delta: float) -> State:
 	return null
-	
+
 ## Input events in this state
 func handle_input(_event: InputEvent) -> State:
 	if _event.is_action_pressed("attack"):

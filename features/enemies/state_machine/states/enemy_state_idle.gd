@@ -18,7 +18,7 @@ func enter() -> void:
 	_timer = randf_range(state_duration_min, state_duration_max)
 	enemy.update_animation(anim_name)
 	pass
-	
+
 ## When the enemy leaves this state
 func exit() -> void:
 	pass
@@ -29,7 +29,7 @@ func process(_delta: float) -> EnemyState:
 	if _timer <= 0:
 		return after_idle_state
 	return null
-	
+
 ## During the _physics_process update in this State
 func physics(_delta: float) -> EnemyState:
 	return null

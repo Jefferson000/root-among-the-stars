@@ -12,17 +12,17 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	change_state(current_state.physics(delta))
-	
+
 func _unhandled_input(event: InputEvent) -> void:
 	change_state(current_state.handle_input(event))
 
 func initialize(_player : Player) -> void:
 	states = []
-	
+
 	for c in get_children():
 		if c is State:
 			states.append(c)
-	
+
 	if states.size() > 0:
 		states[0].player = _player
 		change_state(states[0])
@@ -31,7 +31,7 @@ func initialize(_player : Player) -> void:
 func change_state(new_state: State) -> void:
 	if new_state == null || new_state == current_state:
 		return
-	
+
 	if current_state:
 		current_state.exit()
 

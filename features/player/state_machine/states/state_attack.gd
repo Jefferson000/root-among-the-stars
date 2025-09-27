@@ -18,18 +18,18 @@ func enter() -> void:
 	player.update_animation("attack")
 	sword_animation.play("attack_" + player.anim_direction())
 	animation_player.animation_finished.connect(end_attack)
-	
+
 	#Audio
 	audio.stream = attack_sound
 	audio.pitch_scale = randf_range(0.9, 1.1)
 	audio.play()
-	
+
 	attacking = true
-	
+
 	await get_tree().create_timer(0.075).timeout
 	hurt_box.monitoring = true
 	pass
-	
+
 ## When the player leaves this state
 func exit() -> void:
 	animation_player.animation_finished.disconnect(end_attack)
@@ -45,11 +45,11 @@ func process(_delta: float) -> State:
 		else:
 			return walk
 	return null
-	
+
 ## During the _physics_process update in this State
 func physics(_delta: float) -> State:
 	return null
-	
+
 ## Input events in this state
 func handle_input(_event: InputEvent) -> State:
 	return null

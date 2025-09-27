@@ -6,8 +6,8 @@ const DIR_4: Array[Vector2] = [
 const FACE_BIAS := 0.10
 
 signal direction_changed( new_direction : Vector2)
-signal enemy_damaged()
-signal enemy_destroy()
+signal enemy_damaged( hurt_box : HurtBox )
+signal enemy_destroy( hurt_box : HurtBox )
 
 @export var hp : int = 3
 
@@ -30,8 +30,8 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
-	
-	
+
+
 func set_direction( _new_direction : Vector2) -> bool:
 	direction = _new_direction
 	if direction == Vector2.ZERO:
@@ -59,8 +59,8 @@ func set_direction( _new_direction : Vector2) -> bool:
 
 func update_animation(state: String) -> void:
 	animation_player.play(state + "_" + anim_direction())
-	
-	
+
+
 func anim_direction() -> String:
 	if cardinal_direction == Vector2.DOWN:
 		return "down"
@@ -68,12 +68,12 @@ func anim_direction() -> String:
 		return "up"
 	else:
 		return "side"
-		
-func _take_damage(damage: int) -> void:
+
+func _take_damage( hurt_box : HurtBox ) -> void:
 	if invulnerable:
 		return
-	hp -= damage
+	hp -= hurt_box.damage
 	if hp > 0:
-		enemy_damaged.emit()
+		enemy_damaged.emit( hurt_box )
 	else:
-		enemy_destroy.emit()
+		enemy_destroy.emit( hurt_box )

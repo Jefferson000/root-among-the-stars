@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down")
 	).normalized()
-	
+
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
@@ -50,7 +50,7 @@ func set_direction() -> bool:
 	direction_changed.emit(new_dir)
 	sprite.scale.x = -1 if new_dir == Vector2.LEFT else 1
 	return true
-	
+
 func update_animation(state: String) -> void:
 	animation_player.play(state + "_" + anim_direction())
 
