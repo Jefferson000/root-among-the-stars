@@ -18,13 +18,13 @@ func _ready() -> void:
 	PlayerManager.player = self
 	state_machine.initialize(self)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	direction = Vector2(
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down")
 	).normalized()
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func set_direction() -> bool:

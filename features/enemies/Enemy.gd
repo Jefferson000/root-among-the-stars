@@ -7,11 +7,13 @@ const FACE_BIAS := 0.10
 
 signal direction_changed( new_direction : Vector2)
 signal enemy_damaged()
+signal enemy_destroy()
 
 @export var hp : int = 3
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
+@onready var hit_box = $HitBox
 @onready var state_machine : EnemyStateMachine = $EnemyStateMachine
 
 var cardinal_direction : Vector2 = Vector2.DOWN
@@ -21,8 +23,9 @@ var invulnerable : bool = false
 
 
 func _ready() -> void:
-	state_machine.Initalize( self )
+	state_machine.initialize( self )
 	player = PlayerManager.player
+	hit_box.damaged.connect( _take_damage)
 
 
 func _physics_process(_delta: float) -> void:
@@ -65,3 +68,12 @@ func anim_direction() -> String:
 		return "up"
 	else:
 		return "side"
+		
+func _take_damage(damage: int) -> void:
+	if invulnerable:
+		return
+	hp -= damage
+	if hp > 0:
+		enemy_damaged.emit()
+	else:
+		enemy_destroy.emit()

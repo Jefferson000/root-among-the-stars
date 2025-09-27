@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	change_state(current_state.physics(delta))
 
-func Initalize(_enemy : Enemy) -> void:
+func initialize(_enemy : Enemy) -> void:
 	states = []
 	
 	for c in get_children():

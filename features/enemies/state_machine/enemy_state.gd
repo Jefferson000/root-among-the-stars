@@ -13,7 +13,7 @@ func enter() -> void:
 	pass
 	
 ## When the enemy leaves this state
-func Exit() -> void:
+func exit() -> void:
 	pass
 
 ## During the _process update in this State
