@@ -2,9 +2,9 @@ class_name LevelTileMap extends TileMapLayer
 
 
 func _ready() -> void:
-	LevelManager.ChangeTileMapBounds(GetTileMapBounds())
+	LevelManager.change_tile_map_bounds(get_tile_map_bounds())
 
-func GetTileMapBounds() -> Array[Vector2]:
+func get_tile_map_bounds() -> Array[Vector2]:
 	var bounds : Array[Vector2] =[]
 	bounds.append(
 		Vector2( get_used_rect().position * rendering_quadrant_size )

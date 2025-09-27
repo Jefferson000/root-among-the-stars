@@ -3,7 +3,7 @@ class_name PlayerInteractionsHost extends Node2D
 @onready var player : Player = $".."
 
 func _ready() -> void:
-	player.DirectionChange.connect(UpdateDirection)
+	player.direction_changed.connect(UpdateDirection)
 
 func UpdateDirection( new_direction : Vector2) -> void:
 	match new_direction:

@@ -14,10 +14,10 @@ var attacking : bool = false
 @onready var idle: State = $"../Idle"
 
 ## When the player enters this state
-func Enter() -> void:
-	player.UpdateAnimation("attack")
-	sword_animation.play("attack_" + player.AnimDirection())
-	animation_player.animation_finished.connect(EndAttack)
+func enter() -> void:
+	player.update_animation("attack")
+	sword_animation.play("attack_" + player.anim_direction())
+	animation_player.animation_finished.connect(end_attack)
 	
 	#Audio
 	audio.stream = attack_sound
@@ -31,13 +31,13 @@ func Enter() -> void:
 	pass
 	
 ## When the player leaves this state
-func Exit() -> void:
-	animation_player.animation_finished.disconnect(EndAttack)
+func exit() -> void:
+	animation_player.animation_finished.disconnect(end_attack)
 	hurt_box.monitoring = false
 	pass
 
 ## During the _process update in this State
-func Process(_delta: float) -> State:
+func process(_delta: float) -> State:
 	player.velocity -= player.velocity * decelerate_speed * _delta
 	if attacking == false:
 		if player.direction == Vector2.ZERO:
@@ -47,12 +47,12 @@ func Process(_delta: float) -> State:
 	return null
 	
 ## During the _physics_process update in this State
-func Physics(_delta: float) -> State:
+func physics(_delta: float) -> State:
 	return null
 	
 ## Input events in this state
-func HandleInput(_event: InputEvent) -> State:
+func handle_input(_event: InputEvent) -> State:
 	return null
 
-func EndAttack( _newAnimiationName : String) -> void:
+func end_attack( _newAnimiationName : String) -> void:
 	attacking = false
