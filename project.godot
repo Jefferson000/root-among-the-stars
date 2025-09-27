@@ -20,6 +20,7 @@ boot_splash/layer_9=""
 
 LevelManager="*res://autoload/global_level_manager.gd"
 PlayerManager="*res://autoload/global_player_manager.gd"
+PlayerHud="*res://features/ui/hud/player_hud.tscn"
 
 [display]
 

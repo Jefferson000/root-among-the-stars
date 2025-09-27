@@ -415,6 +415,54 @@ tracks/0/keys = {
 "values": [3, 5]
 }
 
+[sub_resource type="Animation" id="Animation_dh6cn"]
+resource_name = "stun_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [30]
+}
+
+[sub_resource type="Animation" id="Animation_5mj2j"]
+resource_name = "stun_side"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [32]
+}
+
+[sub_resource type="Animation" id="Animation_8nsah"]
+resource_name = "stun_up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [31]
+}
+
 [sub_resource type="Animation" id="Animation_tuyoq"]
 resource_name = "walk_down"
 length = 0.3
@@ -466,54 +514,6 @@ tracks/0/keys = {
 "values": [13, 16]
 }
 
-[sub_resource type="Animation" id="Animation_dh6cn"]
-resource_name = "stun_down"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [30]
-}
-
-[sub_resource type="Animation" id="Animation_8nsah"]
-resource_name = "stun_up"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [31]
-}
-
-[sub_resource type="Animation" id="Animation_5mj2j"]
-resource_name = "stun_side"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [32]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ur7pv"]
 _data = {
 &"RESET": SubResource("Animation_qhqgy"),
@@ -532,21 +532,6 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jxlx1"]
-
-[sub_resource type="Animation" id="Animation_a2auv"]
-resource_name = "default"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_fnld3"]
 length = 0.001
@@ -592,6 +577,21 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_a2auv"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bh38x"]
 _data = {
