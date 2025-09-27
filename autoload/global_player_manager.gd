@@ -22,4 +22,4 @@ func set_as_parent( _p : Node2D ) -> void:
 	_p.add_child( player )
 
 func unparent_player( _p : Node2D ) -> void:
-		_p.remove_child( player )
+	_p.remove_child( player )

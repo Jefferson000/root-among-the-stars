@@ -15,6 +15,7 @@ func init() -> void:
 
 ## When the enemy enters this state
 func enter() -> void:
+	enemy.hurt_box.monitoring = false
 	enemy.invulnerable = true
 
 	_direction = enemy.global_position.direction_to( _damage_position )

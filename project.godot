@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Roots Among The Sky"
-run/main_scene="uid://dfsaujxhaejo2"
+run/main_scene="uid://b2o87xtjxaa2"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 boot_splash/layer_9=""
@@ -21,6 +21,7 @@ boot_splash/layer_9=""
 LevelManager="*res://autoload/global_level_manager.gd"
 PlayerHud="*res://features/ui/hud/player_hud.tscn"
 PlayerManager="*res://autoload/global_player_manager.gd"
+Transition="*res://features/ui/transition/transition.tscn"
 
 [display]
 
