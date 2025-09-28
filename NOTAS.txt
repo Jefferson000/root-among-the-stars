@@ -11,3 +11,7 @@ And I added file.close() to both save_game() and load_game() just to be sure.
 
 
 
+Links:
+
+Create my character sprite
+https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_light&head=Human_male_light&sex=male&shadow=Shadow_shadow&prosthesis_hand=none_Hook_hand&wheelchair=none_Wheelchair&wings=none_Transparent_Pixie_Wings&sleeves=none_Cuffed_Longsleeves_Overlay&clothes=none_Shortsleeve_Polo&bandages=none_Bandages&belt=none_Belly_belt&cape=Solid_navy&cape_trim=Cape_Trim_pink&backpack=none_Backpack&hair=Cowlick_ash&hat=Tricorne_bluegray&neck=Bowtie_2_charcoal&weapon=Great_silver&ammo=Ammo_arrow
