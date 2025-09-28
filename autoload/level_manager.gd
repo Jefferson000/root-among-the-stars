@@ -12,7 +12,6 @@ func _ready() -> void:
 	await get_tree().process_frame
 	level_loaded.emit()
 
-
 func change_tile_map_bounds( bounds: Array[Vector2] ) -> void:
 	current_tilemap_bounds = bounds
 	tile_map_bounds_changed.emit(bounds)
@@ -30,11 +29,15 @@ func load_new_level(
 	await Transition.fade_out()
 
 	level_load_started.emit()
+
 	await get_tree().process_frame
+
 	get_tree().change_scene_to_file( level_path )
 
 	await Transition.fade_in()
 
 	get_tree().paused = false
+
 	await get_tree().process_frame
+
 	level_loaded.emit()
