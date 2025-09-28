@@ -15,7 +15,6 @@ func init() -> void:
 
 ## When the enemy enters this state
 func enter() -> void:
-	enemy.hurt_box.monitoring = false
 	enemy.invulnerable = true
 
 	_direction = enemy.global_position.direction_to( _damage_position )
@@ -25,6 +24,7 @@ func enter() -> void:
 
 	enemy.update_animation( anim_name )
 	enemy.animation_player.animation_finished.connect( _on_animation_finished )
+	disable_hurt_box()
 
 ## When the enemy leaves this state
 func exit() -> void:
@@ -46,3 +46,8 @@ func _on_enemy_destroy( hurt_box : HurtBox ) -> void:
 
 func _on_animation_finished( _a : String) -> void:
 	enemy.queue_free()
+
+func disable_hurt_box() -> void:
+	var hurt_box : HurtBox = enemy.get_node_or_null("HurtBox")
+	if hurt_box:
+		hurt_box.monitoring = false
