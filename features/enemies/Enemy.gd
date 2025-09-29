@@ -7,7 +7,7 @@ const FACE_BIAS := 0.10
 
 signal direction_changed( new_direction : Vector2)
 signal enemy_damaged( hurt_box : HurtBox )
-signal enemy_destroy( hurt_box : HurtBox )
+signal enemy_destroyed( hurt_box : HurtBox )
 
 @export var hp : int = 3
 
@@ -77,4 +77,4 @@ func _take_damage( _hurt_box : HurtBox ) -> void:
 	if hp > 0:
 		enemy_damaged.emit( hurt_box )
 	else:
-		enemy_destroy.emit( hurt_box )
+		enemy_destroyed.emit( hurt_box )

@@ -17,7 +17,7 @@ var _damage_position : Vector2
 
 ## When we initialize this state
 func init() -> void:
-	enemy.enemy_destroy.connect(_on_enemy_destroy)
+	enemy.enemy_destroyed.connect(_on_enemy_destroyed)
 
 ## When the enemy enters this state
 func enter() -> void:
@@ -47,7 +47,7 @@ func process(_delta: float) -> EnemyState:
 func physics(_delta: float) -> EnemyState:
 	return null
 
-func _on_enemy_destroy( hurt_box : HurtBox ) -> void:
+func _on_enemy_destroyed( hurt_box : HurtBox ) -> void:
 	_damage_position = hurt_box.global_position
 	state_machine.change_state(self)
 
