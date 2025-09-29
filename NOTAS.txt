@@ -2,13 +2,13 @@ TODO:
 
 Serialize the save data on save_manager.gd
 Save on a specific point
+Make a way to keep audio even if I pass the transition inmediately after a sound
 
 
 BUGS FOUND:
 Found a bug with pausing the game. Because you paused the game during the level transition, if you pause the game just when triggering level transition it will show pause screen, but the game will not be paused. Fixed it with adding is_transitioning : bool to LevelManager that is set to true and false in load_new_level() function and checking that variable at the beggining of show_pause_menu() function.
 
 And I added file.close() to both save_game() and load_game() just to be sure.
-
 
 
 Links:

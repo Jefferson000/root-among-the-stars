@@ -59,6 +59,13 @@ func item_to_save( slot : SlotData ) -> Dictionary:
 			result.item = slot.item_data.resource_path
 	return result
 
+func use_item( item : ItemData, count : int = 1 ) -> bool:
+	for s in slots:
+		if s:
+			if s.item_data == item and s.quantity >= count:
+				s.quantity -= count
+				return true
+	return false
 
 func parse_save_data( save_data : Array ) -> void:
 	var array_size = slots.size()

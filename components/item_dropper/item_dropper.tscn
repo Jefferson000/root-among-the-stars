@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://edhqb471128m"]
+
+[ext_resource type="Script" uid="uid://exbfeypclimh" path="res://components/item_dropper/item_dropper.gd" id="1_2depa"]
+[ext_resource type="PackedScene" uid="uid://dxmik87rfg5x" path="res://components/PersistentDataHandler/persistent_data_handler.tscn" id="2_2l85m"]
+
+[node name="ItemDropper" type="Node2D"]
+script = ExtResource("1_2depa")
+
+[node name="PersistentDataHandler" parent="." instance=ExtResource("2_2l85m")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -39.0
+offset_top = -32.0
+offset_right = 48.0
+offset_bottom = -9.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "ITEM DROP"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
