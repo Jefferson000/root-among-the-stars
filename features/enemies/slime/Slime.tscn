@@ -830,11 +830,11 @@ script = ExtResource("4_8b2ta")
 script = ExtResource("5_o51wy")
 after_idle_state = NodePath("../Wander")
 
-[node name="Wander" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("after_next_state")]
+[node name="Wander" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("6_3yqib")
 wander_speed = 30.0
 state_animation_duration = 0.7
-after_next_state = NodePath("../Idle")
+next_state = NodePath("../Idle")
 
 [node name="Stun" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("10_qbciq")
