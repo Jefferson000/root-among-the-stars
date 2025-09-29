@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cohctxg8evdaf" path="res://levels/Level.gd" id="1_u6iop"]
 [ext_resource type="PackedScene" uid="uid://dx4udcgwadoh" path="res://levels/components/spawn/player_spawn.tscn" id="2_5q8x3"]
-[ext_resource type="PackedScene" uid="uid://bcr6f7n3fl2rf" path="res://tilemaps/grass/grass-01.tscn" id="2_6gutc"]
+[ext_resource type="PackedScene" uid="uid://bcr6f7n3fl2rf" path="res://tilemaps/grass/grass.tscn" id="2_6gutc"]
 [ext_resource type="PackedScene" uid="uid://bshvgbqkuoyd1" path="res://levels/components/level_transition/level_transition.tscn" id="5_qndrf"]
 
 [node name="04" type="Node2D"]

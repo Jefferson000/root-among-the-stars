@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ck5o62sq52ll7"
-path="res://.godot/imported/treasure-open.wav-e8c0c594805abedf83e1bf978b68b23b.sample"
+path="res://.godot/imported/treasure-open.wav-9017e3bbcc2ab358a58f428df20f4af9.sample"
 
 [deps]
 
-source_file="res://features/interactables/treasure_chest/treasure-open.wav"
-dest_files=["res://.godot/imported/treasure-open.wav-e8c0c594805abedf83e1bf978b68b23b.sample"]
+source_file="res://features/interactables/treasure_chest/audio/treasure-open.wav"
+dest_files=["res://.godot/imported/treasure-open.wav-9017e3bbcc2ab358a58f428df20f4af9.sample"]
 
 [params]
 

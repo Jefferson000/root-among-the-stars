@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://dhr1x7uev7nku"]
 
 [ext_resource type="Script" uid="uid://cohctxg8evdaf" path="res://levels/Level.gd" id="1_h3mut"]
-[ext_resource type="PackedScene" uid="uid://bcr6f7n3fl2rf" path="res://tilemaps/grass/grass-01.tscn" id="2_w3t87"]
+[ext_resource type="PackedScene" uid="uid://bcr6f7n3fl2rf" path="res://tilemaps/grass/grass.tscn" id="2_w3t87"]
 [ext_resource type="PackedScene" uid="uid://vmw7yyqw7eqj" path="res://features/enemies/slime/Slime.tscn" id="4_w3t87"]
 [ext_resource type="PackedScene" uid="uid://cmgq2ncgj6ec3" path="res://props/plant/plant.tscn" id="5_vh5kt"]
 [ext_resource type="PackedScene" uid="uid://bshvgbqkuoyd1" path="res://levels/components/level_transition/level_transition.tscn" id="6_u1an8"]

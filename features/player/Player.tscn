@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://deqnai0rb033v"]
+[gd_scene load_steps=46 format=3 uid="uid://deqnai0rb033v"]
 
 [ext_resource type="Script" uid="uid://c384cc6i8tlrj" path="res://features/player/Player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dljl6v30p86w1" path="res://features/player/sprites/PlayerSprite02.png" id="2_b32pr"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://c61rp6s51c0xo" path="res://features/player/components/player_camera.gd" id="11_3v2ag"]
 [ext_resource type="Script" uid="uid://kkux03ccgxy1" path="res://features/player/state_machine/states/state_stun.gd" id="11_dh6cn"]
 [ext_resource type="PackedScene" uid="uid://b78etmr0eexd3" path="res://components/HitBox/hit_box.tscn" id="13_n4aik"]
+[ext_resource type="Script" uid="uid://dh0sd2r8a0e2c" path="res://features/player/components/player_push_area.gd" id="14_8nsah"]
 [ext_resource type="AudioStream" uid="uid://c1j52tqk54knt" path="res://features/player/audio/hit_player.wav" id="14_jxlx1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
@@ -533,6 +534,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dh6cn"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nsah"]
+size = Vector2(20, 15)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_jxlx1"]
 
 [sub_resource type="Animation" id="Animation_fnld3"]
@@ -689,6 +693,18 @@ monitoring = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
 shape = SubResource("RectangleShape2D_dh6cn")
 debug_color = Color(0, 1, 0, 0.5254902)
+
+[node name="PushArea2D" type="Area2D" parent="Interactions"]
+position = Vector2(0, 6)
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+script = ExtResource("14_8nsah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/PushArea2D"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_8nsah")
+debug_color = Color(0.3019608, 0.14901961, 0, 0.5254902)
 
 [node name="HitBox" parent="." instance=ExtResource("13_n4aik")]
 collision_layer = 2

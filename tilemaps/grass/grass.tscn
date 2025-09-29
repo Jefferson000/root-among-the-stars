@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcr6f7n3fl2rf"]
+[gd_scene load_steps=7 format=3 uid="uid://bcr6f7n3fl2rf"]
 
 [ext_resource type="Texture2D" uid="uid://bf836odo28hy0" path="res://tilemaps/grass/sprites/grass-01.png" id="1_wmy6e"]
-[ext_resource type="Script" uid="uid://dfl2g1yofeb8t" path="res://components/TileMap/level_tile_map.gd" id="2_drvut"]
+[ext_resource type="Texture2D" uid="uid://cxdswm2pgx727" path="res://tilemaps/grass/dungeon_entrance.png" id="2_bstet"]
+[ext_resource type="Script" uid="uid://dfl2g1yofeb8t" path="res://tilemaps/level_tile_map.gd" id="2_drvut"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0mtt"]
 texture = ExtResource("1_wmy6e")
@@ -459,6 +460,27 @@ texture_region_size = Vector2i(32, 32)
 3:3/0 = 0
 3:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ihacy"]
+texture = ExtResource("2_bstet")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8, 16, 8, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8, -11, 1, -3, -4, 4, -4, 16, 8, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8, 16, 8, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 5, -16, 7, 2, 4, 13, -16, 13)
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, -5, -16, -4, -3, -7, 2, -4, 13, 16, 13)
+
 [sub_resource type="TileSet" id="TileSet_bojml"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 16
@@ -467,8 +489,9 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Path"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_r0mtt")
+sources/1 = SubResource("TileSetAtlasSource_ihacy")
 
-[node name="Grass-01" type="TileMapLayer"]
+[node name="Grass" type="TileMapLayer"]
 z_index = -1
 tile_set = SubResource("TileSet_bojml")
 rendering_quadrant_size = 32
