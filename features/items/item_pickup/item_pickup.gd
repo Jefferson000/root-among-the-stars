@@ -1,18 +1,22 @@
 @tool
-class_name ItemPickup extends Node2D
+class_name ItemPickup extends CharacterBody2D
 
 @export var item_data : ItemData : set = _set_item_data
 
 @onready var area_2d: Area2D = $Area2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
-
 func _ready() -> void:
 	_update_texture()
 	if Engine.is_editor_hint():
 		return
 	area_2d.body_entered.connect( _on_body_entered )
 
+func _physics_process(delta: float) -> void:
+	var collision_info = move_and_collide( velocity * delta )
+	if collision_info:
+		velocity = velocity.bounce( collision_info.get_normal() )
+	velocity -= velocity * delta * 4
 
 func _on_body_entered( b ) -> void:
 	if b is Player:

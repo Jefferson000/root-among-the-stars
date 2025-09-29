@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://vmw7yyqw7eqj"]
+[gd_scene load_steps=38 format=3 uid="uid://vmw7yyqw7eqj"]
 
 [ext_resource type="Script" uid="uid://bcrdbrs3jt18b" path="res://features/enemies/Enemy.gd" id="1_qhi75"]
 [ext_resource type="Texture2D" uid="uid://r62ayx5ke6r5" path="res://features/enemies/slime/sprites/Shadow.png" id="1_tk78d"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://nr8dilx8tdid" path="res://features/enemies/slime/sprites/DestroySmoke.png" id="9_oh7ex"]
 [ext_resource type="Script" uid="uid://bxxmukuko2c4f" path="res://features/enemies/state_machine/states/enemy_state_stun.gd" id="10_qbciq"]
 [ext_resource type="Script" uid="uid://d15f4ysvgmbtp" path="res://features/enemies/state_machine/states/enemy_state_destroy.gd" id="12_ia770"]
+[ext_resource type="Script" uid="uid://dgky436nto2tt" path="res://features/enemies/scripts/drop_data.gd" id="13_d1aje"]
+[ext_resource type="Resource" uid="uid://d1en7py2bkqkg" path="res://features/items/resource/apple.tres" id="14_hn7ub"]
+[ext_resource type="Resource" uid="uid://mfoecbfruv1c" path="res://features/items/resource/potion.tres" id="15_hn7ub"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p7yjo"]
 radius = 13.0
@@ -707,6 +710,18 @@ _data = {
 &"walk_up": SubResource("Animation_p7yjo")
 }
 
+[sub_resource type="Resource" id="Resource_8cqd1"]
+script = ExtResource("13_d1aje")
+item = ExtResource("14_hn7ub")
+max_amount = 4
+metadata/_custom_type_script = "uid://dgky436nto2tt"
+
+[sub_resource type="Resource" id="Resource_v34xt"]
+script = ExtResource("13_d1aje")
+item = ExtResource("15_hn7ub")
+probability = 33.0
+metadata/_custom_type_script = "uid://dgky436nto2tt"
+
 [sub_resource type="Animation" id="Animation_ia770"]
 length = 0.001
 tracks/0/type = "value"
@@ -827,6 +842,7 @@ next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("12_ia770")
+drops = Array[ExtResource("13_d1aje")]([SubResource("Resource_8cqd1"), SubResource("Resource_v34xt")])
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4

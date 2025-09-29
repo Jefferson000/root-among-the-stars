@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://b2o87xtjxaa2"]
+[gd_scene load_steps=11 format=4 uid="uid://b2o87xtjxaa2"]
 
 [ext_resource type="Script" uid="uid://cohctxg8evdaf" path="res://levels/Level.gd" id="1_l2ak3"]
 [ext_resource type="PackedScene" uid="uid://bcr6f7n3fl2rf" path="res://shared/resources/tilesets/grass-01.tscn" id="1_xlvri"]
 [ext_resource type="PackedScene" uid="uid://bshvgbqkuoyd1" path="res://levels/components/level_transition/level_transition.tscn" id="2_fl0jm"]
 [ext_resource type="PackedScene" uid="uid://dx4udcgwadoh" path="res://levels/components/spawn/player_spawn.tscn" id="2_sqbdx"]
 [ext_resource type="PackedScene" uid="uid://cltnqjedkaiq1" path="res://features/items/item_pickup/item_pickup.tscn" id="5_bklj5"]
+[ext_resource type="PackedScene" uid="uid://vmw7yyqw7eqj" path="res://features/enemies/slime/Slime.tscn" id="5_dh2nq"]
 [ext_resource type="Resource" uid="uid://dqo1mmfwo6462" path="res://features/items/resource/gem.tres" id="6_bklj5"]
 [ext_resource type="Resource" uid="uid://mfoecbfruv1c" path="res://features/items/resource/potion.tres" id="7_s4jhe"]
 [ext_resource type="Resource" uid="uid://neoo117tq8jj" path="res://features/items/resource/stone.tres" id="8_lkonf"]
@@ -32,17 +33,29 @@ target_transition_area = "TopLevelTransition"
 side = 3
 
 [node name="ItemPickup" parent="." instance=ExtResource("5_bklj5")]
-position = Vector2(208, 112)
+position = Vector2(80, 112)
 item_data = ExtResource("6_bklj5")
 
 [node name="ItemPickup2" parent="." instance=ExtResource("5_bklj5")]
-position = Vector2(272, 112)
+position = Vector2(144, 112)
 item_data = ExtResource("7_s4jhe")
 
 [node name="ItemPickup3" parent="." instance=ExtResource("5_bklj5")]
-position = Vector2(208, 152)
+position = Vector2(80, 152)
 item_data = ExtResource("8_lkonf")
 
 [node name="ItemPickup4" parent="." instance=ExtResource("5_bklj5")]
-position = Vector2(272, 152)
+position = Vector2(144, 152)
 item_data = ExtResource("9_skxhh")
+
+[node name="Slime" parent="." instance=ExtResource("5_dh2nq")]
+position = Vector2(368, 240)
+
+[node name="Slime2" parent="." instance=ExtResource("5_dh2nq")]
+position = Vector2(448, 240)
+
+[node name="Slime3" parent="." instance=ExtResource("5_dh2nq")]
+position = Vector2(288, 96)
+
+[node name="Slime4" parent="." instance=ExtResource("5_dh2nq")]
+position = Vector2(360, 56)
