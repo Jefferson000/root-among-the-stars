@@ -25,14 +25,12 @@ tile_map_data = PackedByteArray("AAAAAAAAAAADAAUAAAAAAAEAAAADAAYAAAAAAAIAAAACAAM
 position = Vector2(512, 128)
 level = "uid://c63luiieq0wyx"
 target_transition_area = "LeftLevelTransition"
-center_player = null
 side = 1
 
 [node name="BottomLevelTransition" parent="." instance=ExtResource("2_fl0jm")]
 position = Vector2(288, 352)
 level = "uid://cwr4p6f7lo5e5"
 target_transition_area = "TopLevelTransition"
-center_player = null
 side = 3
 
 [node name="TopLevelTransition" parent="." instance=ExtResource("2_fl0jm")]
