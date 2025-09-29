@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://xbk68pmkitfx"]
+[gd_scene load_steps=10 format=3 uid="uid://xbk68pmkitfx"]
 
 [ext_resource type="Script" uid="uid://ch2ndq8quilqd" path="res://features/abilities/boomerang/boomerang.gd" id="1_gjln0"]
 [ext_resource type="PackedScene" uid="uid://cmuq6mohtfvvv" path="res://components/HurtBox/hurt_box.tscn" id="2_3c3w7"]
 [ext_resource type="Texture2D" uid="uid://bdf0b1y2x2kii" path="res://features/abilities/boomerang/sprites/boomerang.png" id="2_eysyv"]
-[ext_resource type="AudioStream" uid="uid://bwkn8igip3f6w" path="res://features/abilities/boomerang/audio/catch.wav" id="2_pn8ld"]
 [ext_resource type="AudioStream" uid="uid://bvmjsnwmrbruf" path="res://features/abilities/boomerang/audio/boomerang.wav" id="4_hl2nk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eysyv"]
@@ -53,7 +52,6 @@ _data = {
 
 [node name="Boomerang" type="Node2D"]
 script = ExtResource("1_gjln0")
-catch_audio = ExtResource("2_pn8ld")
 
 [node name="HurtBox" parent="." instance=ExtResource("2_3c3w7")]
 collision_mask = 256

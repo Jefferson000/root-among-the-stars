@@ -13,6 +13,7 @@ var direction : Vector2 = Vector2.ZERO
 @onready var state_machine : PlayerStateMachine = $StateMachine
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var effect_animation_player : AnimationPlayer = $EffectAnimationPlayer
+@onready var audio: AudioStreamPlayer2D = $Audio/AudioStreamPlayer2D
 
 signal direction_changed( new_direction: Vector2 )
 signal player_damage( hurt_box : HurtBox )
