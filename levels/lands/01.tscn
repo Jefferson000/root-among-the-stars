@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://b2o87xtjxaa2"]
+[gd_scene load_steps=11 format=4 uid="uid://b2o87xtjxaa2"]
 
 [ext_resource type="Script" uid="uid://cohctxg8evdaf" path="res://levels/Level.gd" id="1_l2ak3"]
 [ext_resource type="PackedScene" uid="uid://bcr6f7n3fl2rf" path="res://tilemaps/grass/grass.tscn" id="1_xlvri"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dx4udcgwadoh" path="res://levels/spawn/player_spawn.tscn" id="2_sqbdx"]
 [ext_resource type="PackedScene" uid="uid://vmw7yyqw7eqj" path="res://features/enemies/slime/slime.tscn" id="5_dh2nq"]
 [ext_resource type="AudioStream" uid="uid://dujn16esq57rg" path="res://music/example_music_01.ogg" id="6_bklj5"]
+[ext_resource type="PackedScene" uid="uid://csvtvbxr0n4ll" path="res://features/npc/npc.tscn" id="7_2q2vs"]
+[ext_resource type="Resource" uid="uid://c0y0vruq3xdl0" path="res://features/npc/resource/npc_01.tres" id="8_518ck"]
+[ext_resource type="PackedScene" uid="uid://1xanwa3poqg" path="res://features/npc/behavior/wander/npc_behavior_wander.tscn" id="8_bej6m"]
+[ext_resource type="Resource" uid="uid://bt773ke4tyuox" path="res://features/npc/resource/npc_02.tres" id="10_lo7u3"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_l2ak3")
@@ -38,3 +42,19 @@ side = 2
 
 [node name="Slime4" parent="." instance=ExtResource("5_dh2nq")]
 position = Vector2(24, 192)
+
+[node name="NPC" parent="." instance=ExtResource("7_2q2vs")]
+position = Vector2(426, 219)
+npc_resource = ExtResource("8_518ck")
+
+[node name="NpcBehaviorWander" parent="NPC" instance=ExtResource("8_bej6m")]
+
+[node name="NPC2" parent="." instance=ExtResource("7_2q2vs")]
+position = Vector2(130, 119)
+npc_resource = ExtResource("10_lo7u3")
+
+[node name="NpcBehaviorWander" parent="NPC2" instance=ExtResource("8_bej6m")]
+wander_range = 1
+wander_speed = 60.0
+wander_duration = 4.0
+idle_duration = 0.5
