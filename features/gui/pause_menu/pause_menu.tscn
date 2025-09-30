@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://bro3rb3mlawkc"]
 
-[ext_resource type="Script" uid="uid://chn2lruyxe7y2" path="res://features/ui/pause_menu/pause_menu.gd" id="1_l75s4"]
+[ext_resource type="Script" uid="uid://chn2lruyxe7y2" path="res://features/gui/pause_menu/pause_menu.gd" id="1_l75s4"]
 [ext_resource type="Texture2D" uid="uid://dctc2ch6806x5" path="res://features/items/sprites/items.png" id="2_jkr4e"]
-[ext_resource type="Script" uid="uid://cq6bsjws5onk7" path="res://features/ui/pause_menu/inventory/scripts/inventory_ui.gd" id="3_gptwi"]
-[ext_resource type="PackedScene" uid="uid://cthu5ccy6461u" path="res://features/ui/pause_menu/inventory/inventory_slot.tscn" id="3_vxji4"]
-[ext_resource type="Resource" uid="uid://bem0bl20ylmyb" path="res://features/ui/pause_menu/inventory/player_inventory.tres" id="4_tntwa"]
+[ext_resource type="Script" uid="uid://cq6bsjws5onk7" path="res://features/gui/pause_menu/inventory/inventory_ui.gd" id="3_gptwi"]
+[ext_resource type="PackedScene" uid="uid://cthu5ccy6461u" path="res://features/gui/pause_menu/inventory/slot/inventory_slot.tscn" id="3_vxji4"]
+[ext_resource type="Resource" uid="uid://bem0bl20ylmyb" path="res://features/gui/pause_menu/inventory/player_inventory.tres" id="4_tntwa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vxji4"]
 atlas = ExtResource("2_jkr4e")

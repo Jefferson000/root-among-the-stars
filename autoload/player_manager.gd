@@ -1,7 +1,7 @@
 extends Node
 
 const PLAYER = preload( "res://features/player/Player.tscn" )
-const INVENTORY_DATA : InventoryData = preload("res://features/ui/pause_menu/inventory/player_inventory.tres")
+const INVENTORY_DATA : InventoryData = preload("res://features/gui/pause_menu/inventory/player_inventory.tres")
 var player : Player
 var player_spawned : bool = false
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5vg5ntg50otk"]
 
-[ext_resource type="Script" uid="uid://d0832f4n5isho" path="res://features/ui/hud/player_hud.gd" id="1_ia044"]
-[ext_resource type="PackedScene" uid="uid://2wilyd82b340" path="res://features/ui/hud/healt_bar/heart_gui.tscn" id="2_ykeu2"]
+[ext_resource type="Script" uid="uid://d0832f4n5isho" path="res://features/gui/hud/player_hud.gd" id="1_ia044"]
+[ext_resource type="PackedScene" uid="uid://2wilyd82b340" path="res://features/gui/hud/healt_bar/heart_gui.tscn" id="2_ykeu2"]
 
 [node name="PlayerHud" type="CanvasLayer"]
 layer = 2

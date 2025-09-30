@@ -1,6 +1,6 @@
 class_name InventoryUI extends Control
 
-const INVENTORY_SLOT = preload("res://features/ui/pause_menu/inventory/inventory_slot.tscn")
+const INVENTORY_SLOT = preload("res://features/gui/pause_menu/inventory/slot/inventory_slot.tscn")
 
 var focus_index : int = 0
 
