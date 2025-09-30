@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1tbacf1jw0hm"
-path="res://.godot/imported/npc.svg-92bbb39451a25a47298c02c9cbc1b0fa.ctex"
+uid="uid://c63rwjquur2y3"
+path="res://.godot/imported/npc_portrait_nero.png-6c99da98de31b4432b99581014053ce4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://features/npc/icons/npc.svg"
-dest_files=["res://.godot/imported/npc.svg-92bbb39451a25a47298c02c9cbc1b0fa.ctex"]
+source_file="res://features/npcs/characters/nero/sprites/npc_portrait_nero.png"
+dest_files=["res://.godot/imported/npc_portrait_nero.png-6c99da98de31b4432b99581014053ce4.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

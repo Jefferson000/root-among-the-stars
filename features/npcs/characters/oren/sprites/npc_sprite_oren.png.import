@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bonhtce2lmtva"
-path="res://.godot/imported/npc_sprite_nero.png-39e7f0aa8fb9b86df82e77c20fc4de82.ctex"
+uid="uid://dtymgg18gn0ye"
+path="res://.godot/imported/npc_sprite_oren.png-1adedb7f0092588d08ca387c5f4fd815.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://features/npc/characters/nero/sprites/npc_sprite_nero.png"
-dest_files=["res://.godot/imported/npc_sprite_nero.png-39e7f0aa8fb9b86df82e77c20fc4de82.ctex"]
+source_file="res://features/npcs/characters/oren/sprites/npc_sprite_oren.png"
+dest_files=["res://.godot/imported/npc_sprite_oren.png-1adedb7f0092588d08ca387c5f4fd815.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c63rwjquur2y3"
-path="res://.godot/imported/npc_portrait_nero.png-99ee6f33623679edea2bdcb8f1b737a2.ctex"
+uid="uid://bonhtce2lmtva"
+path="res://.godot/imported/npc_sprite_nero.png-899c9780a0cf4cae1f0d6248c9a63750.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://features/npc/characters/nero/sprites/npc_portrait_nero.png"
-dest_files=["res://.godot/imported/npc_portrait_nero.png-99ee6f33623679edea2bdcb8f1b737a2.ctex"]
+source_file="res://features/npcs/characters/nero/sprites/npc_sprite_nero.png"
+dest_files=["res://.godot/imported/npc_sprite_nero.png-899c9780a0cf4cae1f0d6248c9a63750.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-@icon("res://features/npc/icons/npc_behavior.svg")
+@icon("res://features/npcs/icons/npc_behavior.svg")
 class_name NPCBehavior extends Node2D
 
 var npc : NPC

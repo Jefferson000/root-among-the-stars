@@ -1,5 +1,5 @@
 @tool
-@icon("res://features/npc/icons/npc.svg")
+@icon("res://features/npcs/icons/npc.svg")
 class_name NPC extends CharacterBody2D
 
 signal do_behavior_enabled
