@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://edhqb471128m"]
 
 [ext_resource type="Script" uid="uid://exbfeypclimh" path="res://components/item_dropper/item_dropper.gd" id="1_2depa"]
-[ext_resource type="PackedScene" uid="uid://dxmik87rfg5x" path="res://components/PersistentDataHandler/persistent_data_handler.tscn" id="2_2l85m"]
+[ext_resource type="PackedScene" uid="uid://dxmik87rfg5x" path="res://components/persistent_data_handler/persistent_data_handler.tscn" id="2_2l85m"]
 
 [node name="ItemDropper" type="Node2D"]
 script = ExtResource("1_2depa")

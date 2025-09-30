@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cy52thcperu4h" path="res://features/interactables/dungeon/locked_door/locked_door.gd" id="1_1p0ql"]
 [ext_resource type="Texture2D" uid="uid://dhenpqs38fqlw" path="res://features/interactables/dungeon/sprites/dungeon_props.png" id="1_ud3oi"]
-[ext_resource type="PackedScene" uid="uid://dxmik87rfg5x" path="res://components/PersistentDataHandler/persistent_data_handler.tscn" id="2_0o5js"]
+[ext_resource type="PackedScene" uid="uid://dxmik87rfg5x" path="res://components/persistent_data_handler/persistent_data_handler.tscn" id="2_0o5js"]
 [ext_resource type="Resource" uid="uid://5gp86eusjf5q" path="res://features/items/resource/key_dungeon.tres" id="2_elkxo"]
 [ext_resource type="AudioStream" uid="uid://bij4lwec3v5r1" path="res://features/interactables/dungeon/locked_door/audio/locked_door.wav" id="3_afom4"]
 [ext_resource type="AudioStream" uid="uid://dr2yt1ipd6aq1" path="res://features/interactables/dungeon/locked_door/audio/unlock_door.wav" id="4_0jjrj"]

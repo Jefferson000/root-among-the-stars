@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://blqlnjuo86yoj" path="res://tilemaps/dungeon/dungeon.tscn" id="2_v8vmv"]
 [ext_resource type="PackedScene" uid="uid://dx4udcgwadoh" path="res://levels/spawn/player_spawn.tscn" id="3_0fgaq"]
 [ext_resource type="PackedScene" uid="uid://bshvgbqkuoyd1" path="res://levels/level_transition/level_transition.tscn" id="3_4hb51"]
-[ext_resource type="PackedScene" uid="uid://vmw7yyqw7eqj" path="res://features/enemies/slime/Slime.tscn" id="4_v8vmv"]
+[ext_resource type="PackedScene" uid="uid://vmw7yyqw7eqj" path="res://features/enemies/slime/slime.tscn" id="4_v8vmv"]
 [ext_resource type="PackedScene" uid="uid://c07nntmckijj8" path="res://components/enemy_counter/enemy_counter.tscn" id="5_2bu6t"]
 [ext_resource type="PackedScene" uid="uid://edhqb471128m" path="res://components/item_dropper/item_dropper.tscn" id="7_i0rdi"]
 [ext_resource type="Resource" uid="uid://5gp86eusjf5q" path="res://features/items/resource/key_dungeon.tres" id="8_xlch1"]
