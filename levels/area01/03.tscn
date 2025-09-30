@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bcr6f7n3fl2rf" path="res://tilemaps/grass/grass.tscn" id="2_w3t87"]
 [ext_resource type="PackedScene" uid="uid://vmw7yyqw7eqj" path="res://features/enemies/slime/Slime.tscn" id="4_w3t87"]
 [ext_resource type="PackedScene" uid="uid://cmgq2ncgj6ec3" path="res://props/plant/plant.tscn" id="5_vh5kt"]
-[ext_resource type="PackedScene" uid="uid://bshvgbqkuoyd1" path="res://levels/components/level_transition/level_transition.tscn" id="6_u1an8"]
+[ext_resource type="PackedScene" uid="uid://bshvgbqkuoyd1" path="res://levels/level_transition/level_transition.tscn" id="6_u1an8"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_h3mut")

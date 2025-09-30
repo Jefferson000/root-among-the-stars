@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cohctxg8evdaf" path="res://levels/Level.gd" id="1_l2ak3"]
 [ext_resource type="PackedScene" uid="uid://bcr6f7n3fl2rf" path="res://tilemaps/grass/grass.tscn" id="1_xlvri"]
-[ext_resource type="PackedScene" uid="uid://bshvgbqkuoyd1" path="res://levels/components/level_transition/level_transition.tscn" id="2_fl0jm"]
-[ext_resource type="PackedScene" uid="uid://dx4udcgwadoh" path="res://levels/components/spawn/player_spawn.tscn" id="2_sqbdx"]
+[ext_resource type="PackedScene" uid="uid://bshvgbqkuoyd1" path="res://levels/level_transition/level_transition.tscn" id="2_fl0jm"]
+[ext_resource type="PackedScene" uid="uid://dx4udcgwadoh" path="res://levels/spawn/player_spawn.tscn" id="2_sqbdx"]
 [ext_resource type="PackedScene" uid="uid://cltnqjedkaiq1" path="res://features/items/item_pickup/item_pickup.tscn" id="5_bklj5"]
 [ext_resource type="PackedScene" uid="uid://vmw7yyqw7eqj" path="res://features/enemies/slime/Slime.tscn" id="5_dh2nq"]
 [ext_resource type="Resource" uid="uid://dqo1mmfwo6462" path="res://features/items/resource/gem.tres" id="6_bklj5"]
