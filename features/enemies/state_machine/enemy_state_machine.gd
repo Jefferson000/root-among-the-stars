@@ -38,7 +38,7 @@ func change_state(new_state: EnemyState) -> void:
 
 	prev_state = current_state
 	current_state = new_state
-	log_transition(current_state.enemy, prev_state, current_state)
+	#log_transition(current_state.enemy, prev_state, current_state)
 	current_state.enter()
 
 

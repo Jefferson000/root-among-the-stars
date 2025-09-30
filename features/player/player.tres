@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://ck1rieqy4eaax"]
+
+[ext_resource type="Texture2D" uid="uid://di5vobkf2lxyi" path="res://features/player/sprites/hero_portrait.png" id="1_gwipg"]
+[ext_resource type="Script" uid="uid://c34mvxv72k58a" path="res://features/npcs/npc_resource.gd" id="1_mfsw1"]
+
+[resource]
+script = ExtResource("1_mfsw1")
+npc_name = "Player"
+portrait = ExtResource("1_gwipg")
+metadata/_custom_type_script = "uid://c34mvxv72k58a"
