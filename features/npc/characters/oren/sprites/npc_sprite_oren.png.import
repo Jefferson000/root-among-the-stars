@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c63rwjquur2y3"
-path="res://.godot/imported/npc_portrait_02.png-977c245310847d80885666ce9d273ab4.ctex"
+uid="uid://dtymgg18gn0ye"
+path="res://.godot/imported/npc_sprite_oren.png-b897b62aa2d5e47bbad8a14d2b2a605f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://features/npc/sprites/portraits/npc_portrait_02.png"
-dest_files=["res://.godot/imported/npc_portrait_02.png-977c245310847d80885666ce9d273ab4.ctex"]
+source_file="res://features/npc/characters/oren/sprites/npc_sprite_oren.png"
+dest_files=["res://.godot/imported/npc_sprite_oren.png-b897b62aa2d5e47bbad8a14d2b2a605f.ctex"]
 
 [params]
 

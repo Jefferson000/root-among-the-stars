@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://vmw7yyqw7eqj" path="res://features/enemies/slime/slime.tscn" id="5_dh2nq"]
 [ext_resource type="AudioStream" uid="uid://dujn16esq57rg" path="res://music/example_music_01.ogg" id="6_bklj5"]
 [ext_resource type="PackedScene" uid="uid://csvtvbxr0n4ll" path="res://features/npc/npc.tscn" id="7_2q2vs"]
-[ext_resource type="Resource" uid="uid://c0y0vruq3xdl0" path="res://features/npc/resource/npc_01.tres" id="8_518ck"]
+[ext_resource type="Resource" uid="uid://c0y0vruq3xdl0" path="res://features/npc/characters/oren/npc_oren.tres" id="8_518ck"]
 [ext_resource type="PackedScene" uid="uid://1xanwa3poqg" path="res://features/npc/behavior/wander/npc_behavior_wander.tscn" id="8_bej6m"]
-[ext_resource type="Resource" uid="uid://bt773ke4tyuox" path="res://features/npc/resource/npc_02.tres" id="10_lo7u3"]
+[ext_resource type="Resource" uid="uid://bt773ke4tyuox" path="res://features/npc/characters/nero/npc_nero.tres" id="10_lo7u3"]
 [ext_resource type="PackedScene" uid="uid://dhippoev8w703" path="res://features/npc/behavior/patrol/npc_behavior_patrol.tscn" id="11_2q8pq"]
 [ext_resource type="PackedScene" uid="uid://c8bv0jln5iint" path="res://features/npc/behavior/patrol/patrol_location.tscn" id="12_ffbbn"]
 

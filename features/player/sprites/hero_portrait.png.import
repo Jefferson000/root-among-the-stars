@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtymgg18gn0ye"
-path="res://.godot/imported/npc_sprite.png-fe1894a3b60026cc7011b6b9601292f3.ctex"
+uid="uid://di5vobkf2lxyi"
+path="res://.godot/imported/hero_portrait.png-e4ce8b68284e3d07ab1efb89ba2e508f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://features/npc/sprites/characters/npc_sprite.png"
-dest_files=["res://.godot/imported/npc_sprite.png-fe1894a3b60026cc7011b6b9601292f3.ctex"]
+source_file="res://features/player/sprites/hero_portrait.png"
+dest_files=["res://.godot/imported/hero_portrait.png-e4ce8b68284e3d07ab1efb89ba2e508f.ctex"]
 
 [params]
 
