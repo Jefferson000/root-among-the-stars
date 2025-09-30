@@ -15,3 +15,25 @@ Links:
 
 Create my character sprite
 https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_light&head=Human_male_light&sex=male&shadow=Shadow_shadow&prosthesis_hand=none_Hook_hand&wheelchair=none_Wheelchair&wings=none_Transparent_Pixie_Wings&sleeves=none_Cuffed_Longsleeves_Overlay&clothes=none_Shortsleeve_Polo&bandages=none_Bandages&belt=none_Belly_belt&cape=Solid_navy&cape_trim=Cape_Trim_pink&backpack=none_Backpack&hair=Cowlick_ash&hat=Tricorne_bluegray&neck=Bowtie_2_charcoal&weapon=Great_silver&ammo=Ammo_arrow
+
+
+
+YT Comments:
+
+** Music & Audio Manager // E28 // Make a 2D Action & Adventure RPG in Godot 4
+
+Against my better judgement I decided to try and add a reverb effect only to the dungeon area.
+
+In the level script I added a boolean export variable called has_reverb to add a toggle to every level scene, and passed that as an argument into the AudioManager.play_music() function.
+
+Inside the audio manager, I created a var reverb = AudioServer.get_bus_effect(1,0) which you may have to tweak depending on how your Audio tab is set up, but after I had that in the play_music() function I updated the parameters to include has_reverb and at the very top put:
+if has_reverb:
+    reverb.room_size = 0.8
+else:
+    reverb.room_size = 0.0
+
+You need to have it at the very top of the function if you want it to apply to specific areas of your map that use the same audio track, otherwise the if statement to check if the track has changed will return before you get to the reverb.
+
+Anyway, that's the best I could get after some experimentation, but if anyone has a better way please let me know.
+
+

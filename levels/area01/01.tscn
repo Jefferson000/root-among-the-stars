@@ -1,19 +1,15 @@
-[gd_scene load_steps=12 format=4 uid="uid://b2o87xtjxaa2"]
+[gd_scene load_steps=7 format=4 uid="uid://b2o87xtjxaa2"]
 
 [ext_resource type="Script" uid="uid://cohctxg8evdaf" path="res://levels/Level.gd" id="1_l2ak3"]
 [ext_resource type="PackedScene" uid="uid://bcr6f7n3fl2rf" path="res://tilemaps/grass/grass.tscn" id="1_xlvri"]
 [ext_resource type="PackedScene" uid="uid://bshvgbqkuoyd1" path="res://levels/level_transition/level_transition.tscn" id="2_fl0jm"]
 [ext_resource type="PackedScene" uid="uid://dx4udcgwadoh" path="res://levels/spawn/player_spawn.tscn" id="2_sqbdx"]
-[ext_resource type="PackedScene" uid="uid://cltnqjedkaiq1" path="res://features/items/item_pickup/item_pickup.tscn" id="5_bklj5"]
 [ext_resource type="PackedScene" uid="uid://vmw7yyqw7eqj" path="res://features/enemies/slime/Slime.tscn" id="5_dh2nq"]
-[ext_resource type="Resource" uid="uid://dqo1mmfwo6462" path="res://features/items/resource/gem.tres" id="6_bklj5"]
-[ext_resource type="Resource" uid="uid://mfoecbfruv1c" path="res://features/items/resource/potion.tres" id="7_s4jhe"]
-[ext_resource type="PackedScene" uid="uid://bx0iwflgaxa5s" path="res://features/interactables/treasure_chest/treasure_chest.tscn" id="8_lkonf"]
-[ext_resource type="Resource" uid="uid://d1en7py2bkqkg" path="res://features/items/resource/apple.tres" id="9_skxhh"]
-[ext_resource type="Resource" uid="uid://neoo117tq8jj" path="res://features/items/resource/stone.tres" id="10_6ub2s"]
+[ext_resource type="AudioStream" uid="uid://dujn16esq57rg" path="res://music/example_music_01.ogg" id="6_bklj5"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_l2ak3")
+music = ExtResource("6_bklj5")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_sqbdx")]
 position = Vector2(432, 144)
@@ -40,38 +36,5 @@ target_transition_area = "BottomLevelTransition"
 center_player = true
 side = 2
 
-[node name="ItemPickup" parent="." instance=ExtResource("5_bklj5")]
-position = Vector2(80, 112)
-item_data = ExtResource("9_skxhh")
-
-[node name="Slime" parent="." instance=ExtResource("5_dh2nq")]
-position = Vector2(368, 240)
-
-[node name="Slime2" parent="." instance=ExtResource("5_dh2nq")]
-position = Vector2(448, 240)
-
-[node name="Slime3" parent="." instance=ExtResource("5_dh2nq")]
-position = Vector2(288, 96)
-
 [node name="Slime4" parent="." instance=ExtResource("5_dh2nq")]
 position = Vector2(24, 192)
-
-[node name="TreasureChest2" parent="." instance=ExtResource("8_lkonf")]
-position = Vector2(168, 136)
-item_data = ExtResource("7_s4jhe")
-quantity = 20
-
-[node name="TreasureChest5" parent="." instance=ExtResource("8_lkonf")]
-position = Vector2(168, 184)
-item_data = ExtResource("10_6ub2s")
-quantity = 20
-
-[node name="TreasureChest3" parent="." instance=ExtResource("8_lkonf")]
-position = Vector2(112, 136)
-item_data = ExtResource("6_bklj5")
-quantity = 2
-
-[node name="TreasureChest4" parent="." instance=ExtResource("8_lkonf")]
-position = Vector2(224, 136)
-item_data = ExtResource("9_skxhh")
-quantity = 2

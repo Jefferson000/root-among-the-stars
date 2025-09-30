@@ -18,6 +18,7 @@ boot_splash/layer_9=""
 
 [autoload]
 
+AudioManager="*res://autoload/audio_manager.gd"
 LevelManager="*res://autoload/level_manager.gd"
 PlayerHud="*res://features/ui/hud/player_hud.tscn"
 PlayerManager="*res://autoload/player_manager.gd"
