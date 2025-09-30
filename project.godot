@@ -25,6 +25,7 @@ PlayerManager="*res://autoload/player_manager.gd"
 Transition="*res://features/gui/transition/transition.tscn"
 SaveManager="*res://autoload/save_manager.gd"
 PauseMenu="*res://features/gui/pause_menu/pause_menu.tscn"
+DialogSystem="*res://features/gui/dialog_system/dialog_system.tscn"
 
 [display]
 
@@ -33,6 +34,10 @@ window/size/viewport_height=270
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+
+[gui]
+
+theme/custom_font="uid://cloavyl0djdt1"
 
 [input]
 
