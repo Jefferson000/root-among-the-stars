@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b2o87xtjxaa2"]
+[gd_scene load_steps=13 format=4 uid="uid://b2o87xtjxaa2"]
 
 [ext_resource type="Script" uid="uid://cohctxg8evdaf" path="res://levels/Level.gd" id="1_l2ak3"]
 [ext_resource type="PackedScene" uid="uid://bcr6f7n3fl2rf" path="res://tilemaps/grass/grass.tscn" id="1_xlvri"]
@@ -10,6 +10,8 @@
 [ext_resource type="Resource" uid="uid://c0y0vruq3xdl0" path="res://features/npc/resource/npc_01.tres" id="8_518ck"]
 [ext_resource type="PackedScene" uid="uid://1xanwa3poqg" path="res://features/npc/behavior/wander/npc_behavior_wander.tscn" id="8_bej6m"]
 [ext_resource type="Resource" uid="uid://bt773ke4tyuox" path="res://features/npc/resource/npc_02.tres" id="10_lo7u3"]
+[ext_resource type="PackedScene" uid="uid://dhippoev8w703" path="res://features/npc/behavior/patrol/npc_behavior_patrol.tscn" id="11_2q8pq"]
+[ext_resource type="PackedScene" uid="uid://c8bv0jln5iint" path="res://features/npc/behavior/patrol/patrol_location.tscn" id="12_ffbbn"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_l2ak3")
@@ -53,7 +55,21 @@ npc_resource = ExtResource("8_518ck")
 position = Vector2(130, 119)
 npc_resource = ExtResource("10_lo7u3")
 
-[node name="NpcBehaviorWander" parent="NPC2" instance=ExtResource("8_bej6m")]
-wander_range = 1
-wander_speed = 60.0
-idle_duration = 0.1
+[node name="NpcBehaviorPatrol" parent="NPC2" instance=ExtResource("11_2q8pq")]
+
+[node name="PatrolLocation0" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("12_ffbbn")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(94, 9)
+
+[node name="PatrolLocation1" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("12_ffbbn")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(94, 73)
+
+[node name="PatrolLocation2" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("12_ffbbn")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(-2, 73)
+wait_time = 1.0
+
+[node name="PatrolLocation3" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("12_ffbbn")]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(-2, 9)
