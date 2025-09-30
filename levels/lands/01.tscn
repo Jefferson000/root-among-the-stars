@@ -56,5 +56,4 @@ npc_resource = ExtResource("10_lo7u3")
 [node name="NpcBehaviorWander" parent="NPC2" instance=ExtResource("8_bej6m")]
 wander_range = 1
 wander_speed = 60.0
-wander_duration = 4.0
-idle_duration = 0.5
+idle_duration = 0.1
