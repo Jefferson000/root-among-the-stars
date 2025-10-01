@@ -63,6 +63,7 @@ enabled = true
 script = ExtResource("11_cgx8w")
 text = "
 Hi, [b]player[/b] is that you?"
+npc_info = ExtResource("8_518ck")
 metadata/_custom_type_script = "uid://dqcj064kydx58"
 
 [node name="DialogText2" type="Node" parent="NPC/DialogInteraction"]
@@ -76,6 +77,7 @@ metadata/_custom_type_script = "uid://dqcj064kydx58"
 script = ExtResource("11_cgx8w")
 text = "
 Nice bro, happy to see you!"
+npc_info = ExtResource("8_518ck")
 metadata/_custom_type_script = "uid://dqcj064kydx58"
 
 [node name="NPC2" parent="." instance=ExtResource("7_2q2vs")]
@@ -108,41 +110,49 @@ enabled = true
 script = ExtResource("11_cgx8w")
 text = "
 Hi, Hero!"
+npc_info = ExtResource("10_lo7u3")
 metadata/_custom_type_script = "uid://dqcj064kydx58"
 
 [node name="DialogText2" type="Node" parent="NPC2/DialogInteraction"]
 script = ExtResource("11_cgx8w")
 text = "
 Will you help me recovering my magic flute from the dark dungeon?"
+npc_info = ExtResource("10_lo7u3")
 metadata/_custom_type_script = "uid://dqcj064kydx58"
 
 [node name="DialogChoice" type="Node" parent="NPC2/DialogInteraction"]
 script = ExtResource("13_xm58h")
+npc_info = ExtResource("10_lo7u3")
 metadata/_custom_type_script = "uid://dutjlx3jay7wb"
 
 [node name="DialogBranch" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
 script = ExtResource("14_6pyjo")
 text = "Count on it!"
+npc_info = ExtResource("10_lo7u3")
 metadata/_custom_type_script = "uid://bv34krrm5gscc"
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("11_cgx8w")
 text = "
 Thank you dear hero! You are a true specimen!"
+npc_info = ExtResource("10_lo7u3")
 metadata/_custom_type_script = "uid://dqcj064kydx58"
 
 [node name="DialogText2" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("11_cgx8w")
 text = "
 Oh, be careful of the evil wizard who lurks in the dungeon"
+npc_info = ExtResource("10_lo7u3")
 metadata/_custom_type_script = "uid://dqcj064kydx58"
 
 [node name="DialogBranch2" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
 script = ExtResource("14_6pyjo")
 text = "No thanks!"
+npc_info = ExtResource("10_lo7u3")
 metadata/_custom_type_script = "uid://bv34krrm5gscc"
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("11_cgx8w")
 text = "Geez! Some luisy hero you are..."
+npc_info = ExtResource("10_lo7u3")
 metadata/_custom_type_script = "uid://dqcj064kydx58"
