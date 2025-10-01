@@ -27,7 +27,7 @@ side = 3
 
 [node name="TopLevelTransition" parent="." instance=ExtResource("4_aur88")]
 position = Vector2(256, 80)
-level = "uid://0cie4idblocr"
+level = "uid://diph7q0qxrcaj"
 target_transition_area = "BottomLevelTransition"
 center_player = true
 side = 2
