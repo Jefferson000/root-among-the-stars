@@ -12,12 +12,13 @@ var attacking : bool = false
 
 @onready var walk: State = $"../Walk"
 @onready var idle: State = $"../Idle"
+@onready var charge_attack: State = $"../ChargeAttack"
 
 ## When the player enters this state
 func enter() -> void:
 	player.update_animation("attack")
-	sword_animation.play("attack_" + player.anim_direction())
-	animation_player.animation_finished.connect(end_attack)
+	sword_animation.play("attack/" + player.anim_direction())
+	animation_player.animation_finished.connect(_end_attack)
 
 	#Audio
 	audio.stream = attack_sound
@@ -33,7 +34,7 @@ func enter() -> void:
 
 ## When the player leaves this state
 func exit() -> void:
-	animation_player.animation_finished.disconnect(end_attack)
+	animation_player.animation_finished.disconnect(_end_attack)
 	hurt_box.monitoring = false
 	pass
 
@@ -55,5 +56,7 @@ func physics(_delta: float) -> State:
 func handle_input(_event: InputEvent) -> State:
 	return null
 
-func end_attack( _newAnimiationName : String) -> void:
+func _end_attack( _newAnimiationName : String) -> void:
+	if Input.is_action_pressed( "attack" ):
+		state_machine.change_state( charge_attack )
 	attacking = false

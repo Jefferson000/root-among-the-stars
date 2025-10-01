@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cteemg1w2dwpu"
-path="res://.godot/imported/Shadow.png-b9f6907c9e331be3cc4a1b5511267939.ctex"
+uid="uid://cs124llehasjf"
+path="res://.godot/imported/spin_effect.png-0c2c6e0b4b7ebc8afe01ed282e244554.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://features/player/sprites/Shadow.png"
-dest_files=["res://.godot/imported/Shadow.png-b9f6907c9e331be3cc4a1b5511267939.ctex"]
+source_file="res://features/player/sprites/spin_effect.png"
+dest_files=["res://.godot/imported/spin_effect.png-0c2c6e0b4b7ebc8afe01ed282e244554.ctex"]
 
 [params]
 

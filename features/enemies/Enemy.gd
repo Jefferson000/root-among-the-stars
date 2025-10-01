@@ -73,8 +73,8 @@ func anim_direction() -> String:
 func _take_damage( _hurt_box : HurtBox ) -> void:
 	if invulnerable:
 		return
-	hp -= hurt_box.damage
+	hp -= _hurt_box.damage
 	if hp > 0:
-		enemy_damaged.emit( hurt_box )
+		enemy_damaged.emit( _hurt_box )
 	else:
-		enemy_destroyed.emit( hurt_box )
+		enemy_destroyed.emit( _hurt_box )

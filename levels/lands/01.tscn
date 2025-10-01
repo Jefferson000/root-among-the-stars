@@ -48,7 +48,7 @@ center_player = true
 side = 2
 
 [node name="Slime4" parent="." instance=ExtResource("5_dh2nq")]
-position = Vector2(24, 192)
+position = Vector2(321, 87)
 
 [node name="NPC" parent="." instance=ExtResource("7_2q2vs")]
 position = Vector2(426, 219)
