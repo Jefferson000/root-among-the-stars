@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b2o87xtjxaa2"]
+[gd_scene load_steps=18 format=4 uid="uid://b2o87xtjxaa2"]
 
 [ext_resource type="Script" uid="uid://cohctxg8evdaf" path="res://levels/Level.gd" id="1_l2ak3"]
 [ext_resource type="PackedScene" uid="uid://bcr6f7n3fl2rf" path="res://tilemaps/grass/grass.tscn" id="1_xlvri"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" uid="uid://dqcj064kydx58" path="res://features/gui/dialog_system/dialog_item/dialog_text/dialog_text.gd" id="11_cgx8w"]
 [ext_resource type="Resource" uid="uid://ck1rieqy4eaax" path="res://features/player/player.tres" id="12_12n3i"]
 [ext_resource type="PackedScene" uid="uid://c8bv0jln5iint" path="res://features/npcs/behavior/patrol/patrol_location.tscn" id="12_ffbbn"]
+[ext_resource type="Script" uid="uid://dutjlx3jay7wb" path="res://features/gui/dialog_system/dialog_item/dialog_choice/dialog_choice.gd" id="13_xm58h"]
+[ext_resource type="Script" uid="uid://bv34krrm5gscc" path="res://features/gui/dialog_system/dialog_item/dialog_branch/dialog_branch.gd" id="14_6pyjo"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_l2ak3")
@@ -104,5 +106,43 @@ enabled = true
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction"]
 script = ExtResource("11_cgx8w")
-text = "Hi, I'm in patrol control"
+text = "
+Hi, Hero!"
+metadata/_custom_type_script = "uid://dqcj064kydx58"
+
+[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("11_cgx8w")
+text = "
+Will you help me recovering my magic flute from the dark dungeon?"
+metadata/_custom_type_script = "uid://dqcj064kydx58"
+
+[node name="DialogChoice" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("13_xm58h")
+metadata/_custom_type_script = "uid://dutjlx3jay7wb"
+
+[node name="DialogBranch" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
+script = ExtResource("14_6pyjo")
+text = "Count on it!"
+metadata/_custom_type_script = "uid://bv34krrm5gscc"
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("11_cgx8w")
+text = "
+Thank you dear hero! You are a true specimen!"
+metadata/_custom_type_script = "uid://dqcj064kydx58"
+
+[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("11_cgx8w")
+text = "
+Oh, be careful of the evil wizard who lurks in the dungeon"
+metadata/_custom_type_script = "uid://dqcj064kydx58"
+
+[node name="DialogBranch2" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
+script = ExtResource("14_6pyjo")
+text = "No thanks!"
+metadata/_custom_type_script = "uid://bv34krrm5gscc"
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("11_cgx8w")
+text = "Geez! Some luisy hero you are..."
 metadata/_custom_type_script = "uid://dqcj064kydx58"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://8aei4204jjr4"]
+[gd_scene load_steps=17 format=3 uid="uid://8aei4204jjr4"]
 
 [ext_resource type="Script" uid="uid://q3jd7blrm7fk" path="res://features/gui/dialog_system/dialog_system.gd" id="1_8hexk"]
 [ext_resource type="Texture2D" uid="uid://cdmt6ed2vjkjs" path="res://features/gui/dialog_system/sprites/text-bubble.png" id="2_mspmx"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://ccqvsjkuegbvx" path="res://features/gui/dialog_system/audio/voice_blip.wav" id="6_f2rvy"]
 [ext_resource type="Script" uid="uid://bpbcy5edh03v4" path="res://features/gui/dialog_system/portrait_sprite.gd" id="6_jgoi5"]
 [ext_resource type="FontFile" uid="uid://cx2ex65fan0bt" path="res://features/gui/fonts/m5x7.ttf" id="6_v8w0l"]
+[ext_resource type="Theme" uid="uid://b4hef0yx3e0ci" path="res://features/gui/dialog_system/dialog_choice_theme.tres" id="9_c4xgy"]
 
 [sub_resource type="Gradient" id="Gradient_8hexk"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -67,7 +68,7 @@ _data = {
 
 [node name="DialogSystem" type="CanvasLayer"]
 process_mode = 3
-layer = 0
+layer = 3
 script = ExtResource("1_8hexk")
 
 [node name="DialogUI" type="Control" parent="."]
@@ -166,3 +167,39 @@ libraries = {
 &"": SubResource("AnimationLibrary_ix7bk")
 }
 autoplay = "default"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -117.5
+offset_right = 210.0
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_c4xgy")
+alignment = 1
+
+[node name="Button" type="Button" parent="DialogUI/VBoxContainer"]
+layout_mode = 2
+text = "Choice 1..."
+
+[node name="Button2" type="Button" parent="DialogUI/VBoxContainer"]
+layout_mode = 2
+text = "Choice 1..."
+
+[node name="Button3" type="Button" parent="DialogUI/VBoxContainer"]
+layout_mode = 2
+text = "Choice 1..."
+
+[node name="Button4" type="Button" parent="DialogUI/VBoxContainer"]
+layout_mode = 2
+text = "Choice 1..."
+
+[node name="Button5" type="Button" parent="DialogUI/VBoxContainer"]
+layout_mode = 2
+text = "Choice 1..."
