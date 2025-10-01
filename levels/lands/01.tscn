@@ -98,3 +98,11 @@ wait_time = 1.0
 [node name="PatrolLocation3" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("12_ffbbn")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(-2, 9)
+
+[node name="DialogInteraction" parent="NPC2" instance=ExtResource("10_ffbbn")]
+enabled = true
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("11_cgx8w")
+text = "Hi, I'm in patrol control"
+metadata/_custom_type_script = "uid://dqcj064kydx58"

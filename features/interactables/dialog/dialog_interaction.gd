@@ -36,7 +36,7 @@ func player_interact() -> void:
 	player_interacted.emit()
 	await get_tree().process_frame
 	await get_tree().process_frame
-	DialogSystem.show_dialog( dialog_items )
+	DialogSystem.show_dialog_ui( dialog_items )
 	DialogSystem.finished.connect( _on_dialog_finished )
 
 func _on_area_enter( _a : Area2D ) -> void:
