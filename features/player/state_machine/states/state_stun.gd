@@ -25,6 +25,7 @@ func enter() -> void:
 
 	player.make_invulnerable( invulnerable_duration )
 	player.effect_animation_player.play("damaged")
+	PlayerManager.shake_camara( 1.5 )
 
 func exit() -> void:
 	next_state = null

@@ -43,8 +43,15 @@ func _physics_process(_delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("test"):
-		update_hp(-99)
-		player_damage.emit( %AttackHurtBox )
+
+		## Auto Kill Test
+		#update_hp(-99)
+		#player_damage.emit( %AttackHurtBox )
+
+		## Camara Test
+		#PlayerManager.shake_camara()
+
+		pass
 
 func set_direction() -> bool:
 	if direction == Vector2.ZERO:
