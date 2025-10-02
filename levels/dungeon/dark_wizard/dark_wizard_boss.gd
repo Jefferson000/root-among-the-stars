@@ -39,6 +39,7 @@ func _ready() -> void:
 		return
 
 	hp = max_hp
+	PlayerHud.show_boss_ui( "Dark Wizard" )
 
 	hit_box.damaged.connect( _damage_taken )
 
@@ -119,20 +120,21 @@ func _damage_taken( _hurt_box : HurtBox ) -> void:
 	hp = clampi( hp - _hurt_box.damage, 0, max_hp )
 	damage_count += 1
 
-	#Update boss healthbar
+	PlayerHud.update_boss_health( hp, max_hp )
 	animation_player_damaged.play("damaged")
 	animation_player_damaged.seek( 0 )
 	animation_player_damaged.queue("default")
 	if hp < 1 :
-		deafeat()
+		defeat()
 
 func play_audio( _a : AudioStream ) -> void:
 	audio_stream_player.stream = _a
 	audio_stream_player.play()
 
-func deafeat() -> void:
+func defeat() -> void:
 	animation_player.play("destroy")
 	enable_boxes( false )
+	PlayerHud.hide_boss_ui()
 	persistent_data_handler.set_value()
 	await animation_player.animation_finished
 	door_block.enabled = false

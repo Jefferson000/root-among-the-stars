@@ -12,12 +12,17 @@ var _in_transition: bool = false
 @onready var button_back_title: Button = $Control/GameOver/VBoxContainer/BackTitleButton
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
+@onready var boss_ui: Control = $Control/BossUI
+@onready var boss_name: Label = $Control/BossUI/BossName
+@onready var boss_hp_bar: TextureProgressBar = $Control/BossUI/TextureProgressBar
+
 func _ready() -> void:
 	for child in $Control/HeartsHFlowContainer.get_children():
 		if child is HeartGUI:
 			hearts.append(child)
 			child.visible = false
 
+	hide_boss_ui()
 	hide_game_over_screen()
 
 	button_continue.focus_entered.connect( play_audio.bind( button_focus_audio ) )
@@ -102,3 +107,14 @@ func fade_to_black() -> bool:
 	animation_player.play("fade_to_black")
 	await animation_player.animation_finished
 	return true
+
+func show_boss_ui( _boss_name : String ) -> void:
+	boss_ui.visible = true
+	boss_name.text = _boss_name
+	update_boss_health( 1, 1)
+
+func hide_boss_ui() -> void:
+	boss_ui.visible = false
+
+func update_boss_health( hp : int, max_hp : int ) -> void:
+	boss_hp_bar.value = clampf( float( hp ) / float( max_hp ) * 100, 0, 100)

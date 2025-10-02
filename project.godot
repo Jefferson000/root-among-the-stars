@@ -21,7 +21,7 @@ boot_splash/layer_9=""
 
 AudioManager="*res://autoload/audio_manager.gd"
 LevelManager="*res://autoload/level_manager.gd"
-PlayerHud="*res://features/gui/hud/player_hud.tscn"
+PlayerHud="*res://features/gui/player_hud/player_hud.tscn"
 PlayerManager="*res://autoload/player_manager.gd"
 Transition="*res://features/gui/transition/transition.tscn"
 SaveManager="*res://autoload/save_manager.gd"
