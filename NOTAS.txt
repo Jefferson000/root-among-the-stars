@@ -42,3 +42,9 @@ You need to have it at the very top of the function if you want it to apply to s
 Anyway, that's the best I could get after some experimentation, but if anyone has a better way please let me know.
 
 
+Var order:
+SIGNAL
+CONSTANTS
+EXPORT
+ONREADY
+REGULAR VAR
