@@ -805,7 +805,6 @@ drops = Array[ExtResource("14_jdd1u")]([SubResource("Resource_qq6r0"), SubResour
 
 [node name="Chase" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "next_state")]
 script = ExtResource("16_v3mb8")
-turn_rate = 5.0
 vision_area = NodePath("../../VisionArea")
 attack_area = NodePath("../../Sprite2D/AttackHurtBox")
 next_state = NodePath("../Idle")
