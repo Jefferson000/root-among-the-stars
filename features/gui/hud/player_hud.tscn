@@ -1,7 +1,247 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5vg5ntg50otk"]
+[gd_scene load_steps=9 format=3 uid="uid://c5vg5ntg50otk"]
 
 [ext_resource type="Script" uid="uid://d0832f4n5isho" path="res://features/gui/hud/player_hud.gd" id="1_ia044"]
 [ext_resource type="PackedScene" uid="uid://2wilyd82b340" path="res://features/gui/hud/healt_bar/heart_gui.tscn" id="2_ykeu2"]
+[ext_resource type="FontFile" uid="uid://bney0q0cik71m" path="res://features/gui/fonts/Abaddon Bold.ttf" id="3_60ulo"]
+
+[sub_resource type="FontVariation" id="FontVariation_brovj"]
+base_font = ExtResource("3_60ulo")
+spacing_glyph = 4
+
+[sub_resource type="Animation" id="Animation_5opkh"]
+resource_name = "show_game_over"
+length = 4.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeToBlack:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(187, 121), Vector2(187, 105)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(142, 135), Vector2(142, 151)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a6da0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeToBlack:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(187, 105)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(142, 151)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fb7wt"]
+resource_name = "fade_to_black"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeToBlack:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(187, 105)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(142, 151)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jsuow"]
+_data = {
+&"RESET": SubResource("Animation_a6da0"),
+&"fade_to_black": SubResource("Animation_fb7wt"),
+&"show_game_over": SubResource("Animation_5opkh")
+}
 
 [node name="PlayerHud" type="CanvasLayer"]
 layer = 2
@@ -16,7 +256,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="HFlowContainer" type="HFlowContainer" parent="Control"]
+[node name="HeartsHFlowContainer" type="HFlowContainer" parent="Control"]
 layout_mode = 0
 offset_left = 349.0
 offset_top = 1.0
@@ -25,62 +265,138 @@ offset_bottom = 23.0
 theme_override_constants/v_separation = 2
 alignment = 1
 
-[node name="Heart" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart2" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart2" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart3" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart3" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart4" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart4" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart5" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart5" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart6" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart6" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart7" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart7" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart8" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart8" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart9" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart9" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart10" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart10" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart11" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart11" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart12" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart12" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart13" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart13" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart14" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart14" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart15" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart15" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart16" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart16" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart17" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart17" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart18" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart18" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart19" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart19" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
 
-[node name="Heart20" parent="Control/HFlowContainer" instance=ExtResource("2_ykeu2")]
+[node name="Heart20" parent="Control/HeartsHFlowContainer" instance=ExtResource("2_ykeu2")]
 layout_mode = 2
+
+[node name="GameOver" type="Control" parent="Control"]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="Label" type="Label" parent="Control/GameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -30.0
+offset_right = 59.0
+offset_bottom = -11.999847
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_brovj")
+text = "GAME OVER"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/GameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = 16.0
+offset_right = 99.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContinueButton" type="Button" parent="Control/GameOver/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="BackTitleButton" type="Button" parent="Control/GameOver/VBoxContainer"]
+layout_mode = 2
+text = "Back to tile"
+
+[node name="FadeToBlack" type="ColorRect" parent="Control/GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/GameOver"]
+libraries = {
+&"": SubResource("AnimationLibrary_jsuow")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://deqnai0rb033v"]
+[gd_scene load_steps=95 format=3 uid="uid://deqnai0rb033v"]
 
 [ext_resource type="Script" uid="uid://c384cc6i8tlrj" path="res://features/player/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dkce3lgsbjtk5" path="res://features/player/sprites/player_sprite.png" id="2_1ncrl"]
@@ -26,6 +26,8 @@
 [ext_resource type="Script" uid="uid://op8cf6tt6hsu" path="res://features/player/state_machine/states/state_carry.gd" id="17_ocbvg"]
 [ext_resource type="PackedScene" uid="uid://5dunldn277p5" path="res://components/item_magnet/item_magnet.tscn" id="18_a2auv"]
 [ext_resource type="AudioStream" uid="uid://bpk52gp2v0asj" path="res://features/player/audio/throw.wav" id="19_ftx3j"]
+[ext_resource type="Script" uid="uid://bw4h3vpvp0f45" path="res://features/player/state_machine/states/state_death.gd" id="20_bc4qc"]
+[ext_resource type="AudioStream" uid="uid://dxiox5cmgrqta" path="res://features/player/audio/exhausted.wav" id="21_57lbp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 
@@ -432,9 +434,27 @@ tracks/5/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_femra"]
+resource_name = "death"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [74, 75, 76]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ur7pv"]
 _data = {
-&"RESET": SubResource("Animation_qhqgy")
+&"RESET": SubResource("Animation_qhqgy"),
+&"death": SubResource("Animation_femra")
 }
 
 [sub_resource type="Animation" id="Animation_lrnek"]
@@ -1601,6 +1621,10 @@ lift_audio = ExtResource("17_lna2h")
 [node name="Carry" type="Node" parent="StateMachine"]
 script = ExtResource("17_ocbvg")
 throw_audio = ExtResource("19_ftx3j")
+
+[node name="Death" type="Node" parent="StateMachine"]
+script = ExtResource("20_bc4qc")
+exhaust_audio = ExtResource("21_57lbp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 rotation_smoothing_enabled = true

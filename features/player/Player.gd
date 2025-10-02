@@ -16,7 +16,8 @@ var direction : Vector2 = Vector2.ZERO
 @onready var audio: AudioStreamPlayer2D = $Audio/AudioStreamPlayer2D
 @onready var lift_state: State_Lift = $StateMachine/Lift
 @onready var lifted_item: Node2D = $Sprite2D/LiftedItem
-@onready var carry_state: Carry_State = $StateMachine/Carry
+@onready var carry_state: State = $StateMachine/Carry
+
 
 signal direction_changed( new_direction: Vector2 )
 signal player_damage( hurt_box : HurtBox )
@@ -39,6 +40,11 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action("test"):
+		update_hp(-99)
+		player_damage.emit( %AttackHurtBox )
 
 func set_direction() -> bool:
 	if direction == Vector2.ZERO:
@@ -80,12 +86,9 @@ func anim_direction() -> String:
 func _take_damage( hurt_box : HurtBox ) -> void:
 	if invulnerable:
 		return
-	update_hp( -hurt_box.damage )
 	if hp > 0:
+		update_hp( -hurt_box.damage )
 		player_damage.emit( hurt_box )
-	else:
-		player_damage.emit( hurt_box )
-		update_hp(99)
 
 func update_hp( delta : int ) -> void:
 	hp = clampi( hp + delta, 0, max_hp )
@@ -102,3 +105,7 @@ func make_invulnerable( _duration : float = 1.0 ) -> void:
 func pickup_item( _t : Throwable ) -> void:
 	state_machine.change_state( lift_state )
 	carry_state.throwable = _t
+
+func revive_player() -> void:
+	update_hp(99)
+	state_machine.change_state( $StateMachine/Idle )

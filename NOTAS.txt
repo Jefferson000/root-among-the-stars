@@ -4,6 +4,8 @@ Serialize the save data on save_manager.gd
 Save on a specific point
 Make a way to keep audio even if I pass the transition inmediately after a sound
 On Boot Splas add my own Image (Genral -> Boot Splash)
+Play Music when player dies
+When player touches an enemy it should enter in chase state, similar to when is attacked
 
 BUGS FOUND:
 When attacking and stun almost at the same time it continue with hurtbox activated

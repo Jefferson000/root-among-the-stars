@@ -1,63 +1,53 @@
 extends Node
-## Crossfades background music by toggling between two AudioStreamPlayers.
-## Call `play_music(stream)` to crossfade to a new track.
 
-# --- Constants / Tunables ---
-const PLAYER_COUNT: int = 2                 # Two players for ping-pong crossfading
-const VOLUME_FADE_IN_DB: float = 0.0        # Target volume when fully audible
-const VOLUME_FADE_OUT_DB: float = -40.0     # Floor volume when muted
-const DEFAULT_MUSIC_BUS: String = "Music"
 
-@export var music_bus: String = DEFAULT_MUSIC_BUS
-@export var fade_duration_seconds: float = 0.5
+var music_audio_player_count : int = 2
+var current_music_player : int = 0
+var music_players : Array[ AudioStreamPlayer ] = []
+var music_bus : String = "Music"
 
-# --- State ---
-var active_player_idx: int = 0
-var players: Array[AudioStreamPlayer] = []
+var music_fade_duration : float = 0.5
+
 
 func _ready() -> void:
-	# Always process so tweens run even when the scene is paused.
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	for i in music_audio_player_count:
+		var player = AudioStreamPlayer.new()
+		add_child( player )
+		player.bus = music_bus
+		music_players.append( player )
+		player.volume_db = -40
 
-	# Create the pool of audio players and initialize them muted on the correct bus.
-	for i in PLAYER_COUNT:
-		var p := AudioStreamPlayer.new()
-		add_child(p)
-		p.bus = music_bus
-		p.volume_db = VOLUME_FADE_OUT_DB
-		players.append(p)
 
-func play_music(stream: AudioStream) -> void:
-	# Ignore if there's nothing to play (alternatively, you could treat null as "stop music").
-	if stream == null:
+func play_music( _audio : AudioStream ) -> void:
+	if _audio == music_players[ current_music_player ].stream:
 		return
 
-	# If we're already playing this exact stream on the active player, do nothing.
-	var current_player := players[active_player_idx]
-	if stream == current_player.stream:
-		return
+	current_music_player += 1
+	if current_music_player > 1:
+		current_music_player = 0
 
-	# Flip to the other player (ping-pong) and assign the new stream.
-	active_player_idx = (active_player_idx + 1) % players.size()
-	var next_player: AudioStreamPlayer = players[active_player_idx]
+	var current_player : AudioStreamPlayer = music_players[ current_music_player ]
+	current_player.stream = _audio
+	play_and_fade_in( current_player )
 
-	# Ensure the next player starts from the fade-out floor, then play and fade up.
-	next_player.volume_db = VOLUME_FADE_OUT_DB
-	next_player.stream = stream
-	_play_and_fade_in(next_player)
+	var old_player = music_players[ 1 ]
+	if current_music_player == 1:
+		old_player = music_players[ 0 ]
+	fade_out_and_stop( old_player )
 
-	# Fade out (and stop) whichever player was active before the flip.
-	var previous_idx := (active_player_idx + players.size() - 1) % players.size()
-	var prev_player := players[previous_idx]
-	_fade_out_and_stop(prev_player)
 
-func _play_and_fade_in(player: AudioStreamPlayer) -> void:
-	player.play(0)  # Start from the beginning (seek = 0)
-	var tween: Tween = create_tween()
-	tween.tween_property(player, "volume_db", VOLUME_FADE_IN_DB, fade_duration_seconds)
 
-func _fade_out_and_stop(player: AudioStreamPlayer) -> void:
-	var tween: Tween = create_tween()
-	tween.tween_property(player, "volume_db", VOLUME_FADE_OUT_DB, fade_duration_seconds)
+func play_and_fade_in( player : AudioStreamPlayer ) -> void:
+	player.play( 0 )
+	var tween : Tween = create_tween()
+	tween.tween_property( player, 'volume_db', 0, music_fade_duration )
+	pass
+
+
+func fade_out_and_stop( player : AudioStreamPlayer ) -> void:
+	var tween : Tween = create_tween()
+	tween.tween_property( player, 'volume_db', -40, music_fade_duration )
 	await tween.finished
 	player.stop()
+	pass
