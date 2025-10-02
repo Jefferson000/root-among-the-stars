@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://c63luiieq0wyx"]
+[gd_scene load_steps=10 format=4 uid="uid://c63luiieq0wyx"]
 
 [ext_resource type="Script" uid="uid://cohctxg8evdaf" path="res://levels/Level.gd" id="1_onu17"]
 [ext_resource type="PackedScene" uid="uid://bcr6f7n3fl2rf" path="res://tilemaps/grass/grass.tscn" id="2_8v06e"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bsv0oe81ki3tq" path="res://features/enemies/goblin/goblin.tscn" id="6_wvwyy"]
 [ext_resource type="PackedScene" uid="uid://bx0iwflgaxa5s" path="res://features/interactables/treasure_chest/treasure_chest.tscn" id="7_q55yv"]
 [ext_resource type="Resource" uid="uid://d1en7py2bkqkg" path="res://features/items/resource/apple.tres" id="8_kn07k"]
+[ext_resource type="PackedScene" uid="uid://sa1lhoafjj67" path="res://props/pot/pot.tscn" id="9_wdjr2"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_onu17")
@@ -43,3 +44,15 @@ position = Vector2(297, 121)
 position = Vector2(224, 136)
 item_data = ExtResource("8_kn07k")
 quantity = 2
+
+[node name="Pot" parent="." instance=ExtResource("9_wdjr2")]
+position = Vector2(160, 208)
+
+[node name="Pot2" parent="." instance=ExtResource("9_wdjr2")]
+position = Vector2(160, 224)
+
+[node name="Pot3" parent="." instance=ExtResource("9_wdjr2")]
+position = Vector2(160, 240)
+
+[node name="Pot4" parent="." instance=ExtResource("9_wdjr2")]
+position = Vector2(160, 240)
