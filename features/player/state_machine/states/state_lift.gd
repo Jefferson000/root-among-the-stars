@@ -1,12 +1,14 @@
-class_name State_Ide extends State
+class_name State_Lift extends State
 
-@onready var walk: State = $"../Walk"
-@onready var attack: State = $"../Attack"
+@export var lift_audio : AudioStream
+@onready var carry_state : State = $"../Carry"
 
 ## When the player enters this state
 func enter() -> void:
-	player.update_animation("idle")
-	pass
+	player.update_animation("lift")
+	player.animation_player.animation_finished.connect( state_complete )
+	player.audio.stream = lift_audio
+	player.audio.play()
 
 ## When the player leaves this state
 func exit() -> void:
@@ -14,8 +16,6 @@ func exit() -> void:
 
 ## During the _process update in this State
 func process(_delta: float) -> State:
-	if player.direction != Vector2.ZERO:
-		return walk
 	player.velocity = Vector2.ZERO
 	return null
 
@@ -25,8 +25,8 @@ func physics(_delta: float) -> State:
 
 ## Input events in this state
 func handle_input(_event: InputEvent) -> State:
-	if _event.is_action_pressed("attack"):
-		return attack
-	elif _event.is_action_pressed("interact"):
-		PlayerManager.interact()
 	return null
+
+func state_complete( _a : String ) -> void:
+	player.animation_player.animation_finished.disconnect( state_complete )
+	state_machine.change_state( carry_state )

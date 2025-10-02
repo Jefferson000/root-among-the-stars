@@ -1,11 +1,14 @@
 extends Node
 
+
+signal interact_pressed
+
 const PLAYER = preload( "res://features/player/Player.tscn" )
 const INVENTORY_DATA : InventoryData = preload("res://features/gui/pause_menu/inventory/player_inventory.tres")
 var player : Player
 var player_spawned : bool = false
+var interact_handled : bool = true
 
-signal interact_pressed
 
 func _ready() -> void:
 	add_player_instance()
@@ -35,3 +38,7 @@ func unparent_player( _p : Node2D ) -> void:
 func play_audio( _audio : AudioStream ) -> void:
 	player.audio.stream = _audio
 	player.audio.play()
+
+func interact() -> void:
+	interact_handled = false
+	interact_pressed.emit()

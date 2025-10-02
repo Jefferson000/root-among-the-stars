@@ -1,5 +1,7 @@
 class_name HurtBox extends Area2D
 
+signal did_damage
+
 @export var damage : int = 1
 
 func _ready() -> void:
@@ -7,4 +9,6 @@ func _ready() -> void:
 
 func _area_entered( a : Area2D) -> void:
 	if a is HitBox:
-		a.take_damage(self)
+		print("hurt_box doing hurts with this damage: ", self.damage)
+		did_damage.emit()
+		a.take_damage( self )

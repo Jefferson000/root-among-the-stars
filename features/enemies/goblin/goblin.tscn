@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bcrdbrs3jt18b" path="res://features/enemies/enemy.gd" id="1_3l85o"]
 [ext_resource type="PackedScene" uid="uid://cmuq6mohtfvvv" path="res://components/hurt_box/hurt_box.tscn" id="2_vb6ko"]
 [ext_resource type="PackedScene" uid="uid://b78etmr0eexd3" path="res://components/hit_box/hit_box.tscn" id="3_uacx4"]
-[ext_resource type="Texture2D" uid="uid://bcajfhwm3vcrr" path="res://features/player/sprites/Shadow.png" id="4_fb3j6"]
+[ext_resource type="Texture2D" uid="uid://cteemg1w2dwpu" path="res://features/player/sprites/Shadow.png" id="4_fb3j6"]
 [ext_resource type="Texture2D" uid="uid://bb45owwj8lvp1" path="res://features/enemies/goblin/sprites/goblin.png" id="5_ehmqu"]
 [ext_resource type="AudioStream" uid="uid://2mi28yawkh2a" path="res://features/enemies/audio/hit_01.wav" id="6_d7rmf"]
 [ext_resource type="AudioStream" uid="uid://bqjsug2eache" path="res://features/enemies/audio/hit_00.wav" id="7_jbpyp"]

@@ -1,8 +1,7 @@
 class_name State_ChargeAttack extends State
 
-
 @onready var idle: State_Ide = $"../Idle"
-@onready var charge_attack_hurt_box: HurtBox = %AttackHurtBox
+@onready var charge_attack_hurt_box: HurtBox = $"../../Sprite2D/ChargeHurtBox"
 @onready var charge_spin_hurt_box: HurtBox = %SpinHurtBox
 @onready var audio_stream_player: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 @onready var spin_effect_sprite: Sprite2D = $"../../Sprite2D/SpinEffectSprite2D"
@@ -34,7 +33,6 @@ func enter() -> void:
 	is_attacking = false
 	walking = false
 	charge_attack_hurt_box.monitoring = true
-
 	gpu_particles.amount = 4
 	gpu_particles.explosiveness = 0
 	particles.initial_velocity_min = 10
@@ -89,7 +87,7 @@ func charge_attack() -> void:
 	player.animation_player.seek( get_spin_frame() )
 	play_audio( sfx_spin )
 	spin_effect_sprite.visible = true
-	spin_animation_player.play("spin")
+	spin_animation_player.play( "spin" )
 	var _duration : float = player.animation_player.current_animation_length
 
 	player.make_invulnerable( _duration )

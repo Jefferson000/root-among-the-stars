@@ -1,0 +1,152 @@
+[gd_scene load_steps=13 format=3 uid="uid://sa1lhoafjj67"]
+
+[ext_resource type="Script" uid="uid://odiamo3fd0xk" path="res://props/pot/pot.gd" id="1_48h1u"]
+[ext_resource type="Texture2D" uid="uid://csveikeg0o764" path="res://props/sprites/props.png" id="1_p1qxa"]
+[ext_resource type="AudioStream" uid="uid://pw5ywvufeoxb" path="res://props/pot/audio/pot_destroy.wav" id="3_q30ba"]
+[ext_resource type="PackedScene" uid="uid://btcxa4tuf0h1j" path="res://features/interactables/thowable/throwable.tscn" id="4_wksmc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sj4po"]
+size = Vector2(20, 11)
+
+[sub_resource type="Gradient" id="Gradient_p1qxa"]
+offsets = PackedFloat32Array(0.29281768, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_48h1u"]
+gradient = SubResource("Gradient_p1qxa")
+width = 20
+height = 12
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Animation" id="Animation_072jo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShadowSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_48h1u"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_q30ba"]
+resource_name = "destroy"
+step = 0.075
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.075, 0.15, 0.22500001, 0.3, 0.375, 0.45000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9, 10]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShadowSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.30769232),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_q30ba")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wksmc"]
+_data = {
+&"RESET": SubResource("Animation_072jo"),
+&"default": SubResource("Animation_48h1u"),
+&"destroy": SubResource("Animation_q30ba")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_072jo"]
+size = Vector2(16, 8)
+
+[node name="Pot" type="Node2D"]
+script = ExtResource("1_48h1u")
+
+[node name="Throwable" parent="." instance=ExtResource("4_wksmc")]
+hurt_box_damage = 1
+hurt_box_do_damage = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Throwable"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_sj4po")
+debug_color = Color(0, 1, 0, 0.5254902)
+
+[node name="ShadowSprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_48h1u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+texture = ExtResource("1_p1qxa")
+hframes = 16
+vframes = 3
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wksmc")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_072jo")
