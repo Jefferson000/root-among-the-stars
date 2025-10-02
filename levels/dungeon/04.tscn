@@ -1,21 +1,148 @@
-[gd_scene load_steps=7 format=4 uid="uid://c1kjehutsk3rx"]
+[gd_scene load_steps=23 format=4 uid="uid://c1kjehutsk3rx"]
 
 [ext_resource type="Script" uid="uid://cohctxg8evdaf" path="res://levels/Level.gd" id="1_0xyk7"]
 [ext_resource type="PackedScene" uid="uid://blqlnjuo86yoj" path="res://tilemaps/dungeon/dungeon.tscn" id="2_hnuip"]
 [ext_resource type="PackedScene" uid="uid://dx4udcgwadoh" path="res://levels/spawn/player_spawn.tscn" id="2_yhuvo"]
 [ext_resource type="PackedScene" uid="uid://bshvgbqkuoyd1" path="res://levels/level_transition/level_transition.tscn" id="3_hnuip"]
 [ext_resource type="PackedScene" uid="uid://ccnkisijfy73g" path="res://props/torch/torch.tscn" id="5_40goi"]
+[ext_resource type="Texture2D" uid="uid://cbm5803sxgsmm" path="res://levels/dungeon/dark_wizard/sprites/boss-cloak.png" id="6_gajyk"]
 [ext_resource type="PackedScene" uid="uid://bd7vasx31a8ll" path="res://levels/dungeon/dark_wizard/energy_beam/energy_beam.tscn" id="6_qtp6k"]
+[ext_resource type="PackedScene" uid="uid://cmuq6mohtfvvv" path="res://components/hurt_box/hurt_box.tscn" id="7_m0n0r"]
+[ext_resource type="PackedScene" uid="uid://b78etmr0eexd3" path="res://components/hit_box/hit_box.tscn" id="8_nm70f"]
+
+[sub_resource type="Gradient" id="Gradient_wvtci"]
+offsets = PackedFloat32Array(0.39228296, 1)
+colors = PackedColorArray(0, 0, 0, 0.9098039, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m0n0r"]
+gradient = SubResource("Gradient_wvtci")
+width = 48
+height = 24
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Animation" id="Animation_wqrkm"]
+resource_name = "down"
+length = 0.3333
+loop_mode = 2
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_qtr8x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_5kpdv"]
+resource_name = "up"
+length = 0.3333
+loop_mode = 2
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_g3eg5"]
+resource_name = "side"
+length = 0.3333
+loop_mode = 2
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3qca6"]
+_data = {
+&"RESET": SubResource("Animation_qtr8x"),
+&"down": SubResource("Animation_wqrkm"),
+&"side": SubResource("Animation_g3eg5"),
+&"up": SubResource("Animation_5kpdv")
+}
+
+[sub_resource type="Gradient" id="Gradient_2i3cg"]
+offsets = PackedFloat32Array(0.26045015, 0.9067524)
+colors = PackedColorArray(0.8648257, 0, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4x2n1"]
+gradient = SubResource("Gradient_2i3cg")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m0n0r"]
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6bl83"]
+radius = 13.0
+
+[sub_resource type="Gradient" id="Gradient_qtp6k"]
+offsets = PackedFloat32Array(0.5948553, 0.8553055, 0.99678457)
+colors = PackedColorArray(1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gajyk"]
+gradient = SubResource("Gradient_qtp6k")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [node name="04" type="Node2D"]
 script = ExtResource("1_0xyk7")
 
-[node name="PlayerSpawn" parent="." instance=ExtResource("2_yhuvo")]
-position = Vector2(256, 226)
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.15808234, 0.2136338, 0.21869111, 1)
+energy = 0.5
+blend_mode = 2
 
 [node name="Dungeon" parent="." instance=ExtResource("2_hnuip")]
 tile_map_data = PackedByteArray("AAAOAAIAAAAOAAIAAAAOAAMAAAAOAAMAAAAOAAQAAAAOAAMAAAAOAAUAAAAOAAMAAAAOAAYAAAAOAAMAAAAPAAIAAAAPAAIAAAAPAAMAAAAPAAMAAAAPAAQAAAAPAAMAAAAPAAUAAAAPAAMAAAAPAAYAAAAPAAMAAAAOAAcAAAAOAAMAAAAPAAcAAAAPAAMAAAAOAAgAAAAOAAMAAAAOAAkAAAAOAAMAAAAPAAgAAAAPAAMAAAAPAAkAAAAPAAMAAAANAAoAAAANAAQAAAANAAsAAAANAAUAAAAOAAoAAAAOAAQAAAAOAAsAAAAOAAUAAAAPAAoAAAAPAAQAAAAPAAsAAAAPAAUAAAAAAAIAAAAJAAIAAAABAAIAAAAKAAIAAAAAAAMAAAAJAAMAAAAAAAQAAAAJAAMAAAABAAMAAAAKAAMAAAABAAQAAAAKAAMAAAAAAAUAAAAJAAMAAAAAAAYAAAAJAAMAAAABAAUAAAAKAAMAAAABAAYAAAAKAAMAAAAAAAcAAAAJAAMAAAAAAAgAAAAJAAMAAAABAAcAAAAKAAMAAAABAAgAAAAKAAMAAAAAAAkAAAAJAAMAAAAAAAoAAAAJAAQAAAABAAkAAAAKAAMAAAABAAoAAAAKAAQAAAAAAAsAAAAJAAUAAAABAAsAAAAKAAUAAAAMAAoAAAAMAAQAAAAMAAsAAAAMAAUAAAALAAoAAAADAAUAAAALAAsAAAADAAYAAAAKAAoAAAAAAAUAAAAKAAsAAAAAAAYAAAAJAAoAAAADAAUAAAAJAAsAAAADAAYAAAAIAAoAAAACAAUAAAAIAAsAAAACAAYAAAAHAAoAAAABAAUAAAAHAAsAAAABAAYAAAAGAAoAAAAAAAUAAAAGAAsAAAAAAAYAAAAFAAoAAAADAAUAAAAFAAsAAAADAAYAAAAEAAoAAAAAAAUAAAAEAAsAAAAAAAYAAAADAAoAAAAMAAQAAAADAAsAAAAMAAUAAAACAAoAAAALAAQAAAACAAsAAAALAAUAAAACAAIAAAALAAIAAAACAAMAAAALAAMAAAAEAAIAAAAEAAcAAAAFAAIAAAAHAAcAAAAFAAMAAAADAAEAAAAGAAIAAAAMAAIAAAAGAAMAAAADAAEAAAAHAAIAAAAMAAIAAAAHAAMAAAABAAEAAAAIAAIAAAAMAAIAAAAIAAMAAAADAAEAAAAJAAIAAAAMAAIAAAAJAAMAAAADAAEAAAAKAAIAAAAEAAcAAAAKAAMAAAADAAEAAAALAAIAAAAHAAcAAAALAAMAAAADAAEAAAAMAAIAAAAMAAIAAAAMAAMAAAAMAAMAAAANAAIAAAANAAIAAAAKAAQAAAADAAEAAAAKAAUAAAADAAEAAAALAAQAAAADAAEAAAALAAUAAAADAAEAAAAIAAQAAAADAAEAAAAJAAQAAAABAAIAAAAJAAUAAAADAAEAAAAGAAQAAAADAAEAAAAGAAUAAAADAAEAAAAHAAQAAAADAAEAAAAEAAQAAAADAAEAAAAEAAUAAAACAAEAAAAFAAQAAAADAAEAAAACAAQAAAALAAMAAAACAAUAAAALAAMAAAADAAQAAAADAAEAAAADAAUAAAADAAEAAAAMAAQAAAAMAAMAAAAMAAUAAAAMAAMAAAANAAQAAAANAAMAAAANAAUAAAANAAMAAAAMAAYAAAAMAAMAAAAMAAcAAAAMAAMAAAANAAYAAAANAAMAAAANAAcAAAANAAMAAAAKAAYAAAACAAEAAAAKAAcAAAAAAAMAAAALAAYAAAADAAEAAAALAAcAAAAAAAMAAAAIAAYAAAADAAEAAAAIAAcAAAAAAAMAAAAJAAYAAAADAAEAAAAJAAcAAAAAAAMAAAAGAAYAAAAAAAMAAAAGAAcAAAAAAAMAAAAHAAYAAAADAAEAAAAHAAcAAAAAAAMAAAAEAAYAAAAAAAMAAAAEAAcAAAAAAAMAAAAFAAYAAAAAAAMAAAAFAAcAAAAAAAMAAAACAAYAAAALAAMAAAACAAcAAAALAAMAAAADAAYAAAAAAAMAAAADAAcAAAAAAAMAAAACAAgAAAALAAMAAAACAAkAAAALAAMAAAADAAkAAAAAAAMAAAAEAAkAAAAAAAMAAAAFAAkAAAAAAAMAAAAGAAkAAAAAAAMAAAAHAAgAAAAAAAMAAAAHAAkAAAAAAAMAAAAIAAgAAAAAAAMAAAAIAAkAAAAAAAMAAAAJAAgAAAAAAAMAAAAJAAkAAAAAAAMAAAAKAAgAAAAAAAMAAAAKAAkAAAAAAAMAAAALAAgAAAAAAAMAAAALAAkAAAAAAAMAAAAMAAgAAAAMAAMAAAAMAAkAAAAMAAMAAAANAAgAAAANAAMAAAANAAkAAAANAAMAAAAEAAMAAAADAAEAAAADAAIAAAAMAAIAAAADAAMAAAADAAEAAAAHAAUAAAABAAMAAAAIAAUAAAADAAEAAAAGAAgAAAAAAAMAAAAFAAgAAAAAAAMAAAADAAgAAAAAAAMAAAAEAAgAAAAAAAMAAAAEAAwAAAAAAAcAAAAFAAwAAAADAAcAAAAGAAwAAAAAAAcAAAAHAAwAAAABAAcAAAAIAAwAAAACAAcAAAAJAAwAAAADAAcAAAAKAAwAAAAAAAcAAAALAAwAAAADAAcAAAAMAAwAAAAMAAYAAAANAAwAAAANAAYAAAAOAAwAAAAOAAYAAAAPAAwAAAAPAAYAAAAAAAwAAAAJAAYAAAABAAwAAAAKAAYAAAACAAwAAAALAAYAAAADAAwAAAAMAAYAAAAFAAUAAAADAAEAAAANAAMAAAANAAMAAAAAAAAAAAAJAAAAAAAAAAEAAAAJAAEAAAABAAAAAAAKAAAAAAABAAEAAAAKAAEAAAACAAAAAAALAAAAAAACAAEAAAALAAEAAAADAAAAAAALAAAAAAADAAEAAAALAAEAAAAEAAAAAAAEAAUAAAAEAAEAAAAEAAYAAAAFAAAAAAAHAAUAAAAFAAEAAAAHAAYAAAAGAAAAAAAMAAAAAAAGAAEAAAAMAAEAAAAHAAAAAAAMAAAAAAAHAAEAAAAMAAEAAAAIAAAAAAAMAAAAAAAIAAEAAAAMAAEAAAAJAAAAAAAMAAAAAAAJAAEAAAAMAAEAAAAKAAAAAAAEAAUAAAAKAAEAAAAEAAYAAAALAAAAAAAHAAUAAAALAAEAAAAHAAYAAAAMAAAAAAAMAAAAAAAMAAEAAAAMAAEAAAANAAAAAAANAAAAAAANAAEAAAANAAEAAAAOAAAAAAAOAAAAAAAOAAEAAAAOAAEAAAAPAAAAAAAPAAAAAAAPAAEAAAAPAAIAAAA=")
 rendering_quadrant_size = 32
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("2_yhuvo")]
+position = Vector2(256, 320)
 
 [node name="BottomLevelTransition" parent="." instance=ExtResource("3_hnuip")]
 position = Vector2(256, 416)
@@ -35,11 +162,89 @@ position = Vector2(400, 120)
 [node name="Torch4" parent="." instance=ExtResource("5_40goi")]
 position = Vector2(112, 120)
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-color = Color(0.15808234, 0.2136338, 0.21869111, 1)
-energy = 0.5
-blend_mode = 2
+[node name="DarkWizardBoss" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="EnergyBeam" parent="." instance=ExtResource("6_qtp6k")]
-position = Vector2(264, 248)
-use_timer = true
+[node name="BossNode" type="Node2D" parent="DarkWizardBoss"]
+position = Vector2(256, 216)
+
+[node name="ShadowSprite" type="Sprite2D" parent="DarkWizardBoss/BossNode"]
+texture = SubResource("GradientTexture2D_m0n0r")
+
+[node name="CloakSprite" type="Sprite2D" parent="DarkWizardBoss/BossNode"]
+modulate = Color(1.776, 0.038000092, 1.7484045, 1)
+position = Vector2(0, -34)
+texture = ExtResource("6_gajyk")
+hframes = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DarkWizardBoss/BossNode/CloakSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_3qca6")
+}
+autoplay = "down"
+
+[node name="PointLight2D" type="PointLight2D" parent="DarkWizardBoss/BossNode"]
+energy = 0.75
+texture = SubResource("GradientTexture2D_4x2n1")
+
+[node name="HitBox" parent="DarkWizardBoss/BossNode" instance=ExtResource("8_nm70f")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DarkWizardBoss/BossNode/HitBox"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_m0n0r")
+debug_color = Color(0.9019608, 0, 0.25882354, 0)
+
+[node name="HurtBox" parent="DarkWizardBoss/BossNode" instance=ExtResource("7_m0n0r")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DarkWizardBoss/BossNode/HurtBox"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_6bl83")
+debug_color = Color(0.9019608, 0, 0.25882354, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DarkWizardBoss/BossNode"]
+max_polyphony = 2
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DarkWizardBoss/BossNode"]
+
+[node name="BeamAttacks" type="Node2D" parent="DarkWizardBoss"]
+visible = false
+
+[node name="EB_H1" parent="DarkWizardBoss/BeamAttacks" instance=ExtResource("6_qtp6k")]
+position = Vector2(256, 144)
+
+[node name="EB_H2" parent="DarkWizardBoss/BeamAttacks" instance=ExtResource("6_qtp6k")]
+position = Vector2(256, 208)
+
+[node name="EB_H3" parent="DarkWizardBoss/BeamAttacks" instance=ExtResource("6_qtp6k")]
+position = Vector2(256, 272)
+
+[node name="EB_V1" parent="DarkWizardBoss/BeamAttacks" instance=ExtResource("6_qtp6k")]
+position = Vector2(160, 272)
+rotation = -1.5707964
+
+[node name="EB_V2" parent="DarkWizardBoss/BeamAttacks" instance=ExtResource("6_qtp6k")]
+position = Vector2(256, 272)
+rotation = -1.5707964
+
+[node name="EB_V3" parent="DarkWizardBoss/BeamAttacks" instance=ExtResource("6_qtp6k")]
+position = Vector2(352, 272)
+rotation = -1.5707964
+
+[node name="PositionTagets" type="Node2D" parent="DarkWizardBoss"]
+
+[node name="Sprite2D" type="Sprite2D" parent="DarkWizardBoss/PositionTagets"]
+position = Vector2(256, 112)
+texture = SubResource("GradientTexture2D_gajyk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="DarkWizardBoss/PositionTagets"]
+position = Vector2(400, 208)
+texture = SubResource("GradientTexture2D_gajyk")
+
+[node name="Sprite2D3" type="Sprite2D" parent="DarkWizardBoss/PositionTagets"]
+position = Vector2(256, 304)
+texture = SubResource("GradientTexture2D_gajyk")
+
+[node name="Sprite2D4" type="Sprite2D" parent="DarkWizardBoss/PositionTagets"]
+position = Vector2(112, 208)
+texture = SubResource("GradientTexture2D_gajyk")
