@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b2o87xtjxaa2"]
+[gd_scene load_steps=20 format=4 uid="uid://b2o87xtjxaa2"]
 
 [ext_resource type="Script" uid="uid://cohctxg8evdaf" path="res://levels/Level.gd" id="1_l2ak3"]
 [ext_resource type="PackedScene" uid="uid://bcr6f7n3fl2rf" path="res://tilemaps/grass/grass.tscn" id="1_xlvri"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://dutjlx3jay7wb" path="res://features/gui/dialog_system/dialog_item/dialog_choice/dialog_choice.gd" id="13_xm58h"]
 [ext_resource type="Script" uid="uid://bv34krrm5gscc" path="res://features/gui/dialog_system/dialog_item/dialog_branch/dialog_branch.gd" id="14_6pyjo"]
 [ext_resource type="PackedScene" uid="uid://sa1lhoafjj67" path="res://props/pot/pot.tscn" id="18_6pyjo"]
+[ext_resource type="PackedScene" uid="uid://cmgq2ncgj6ec3" path="res://props/plant/plant.tscn" id="19_wsgxr"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_l2ak3")
@@ -161,17 +162,5 @@ metadata/_custom_type_script = "uid://dqcj064kydx58"
 [node name="Pot" parent="." instance=ExtResource("18_6pyjo")]
 position = Vector2(348, 133)
 
-[node name="Pot2" parent="." instance=ExtResource("18_6pyjo")]
-position = Vector2(297, 134)
-
-[node name="Pot3" parent="." instance=ExtResource("18_6pyjo")]
-position = Vector2(408, 229)
-
-[node name="Pot4" parent="." instance=ExtResource("18_6pyjo")]
-position = Vector2(450, 224)
-
-[node name="Pot5" parent="." instance=ExtResource("18_6pyjo")]
-position = Vector2(294, 151)
-
-[node name="Pot6" parent="." instance=ExtResource("18_6pyjo")]
-position = Vector2(443, 257)
+[node name="Plant" parent="." instance=ExtResource("19_wsgxr")]
+position = Vector2(289, 132)

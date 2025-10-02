@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cs124llehasjf" path="res://features/player/sprites/spin_effect.png" id="4_jec2r"]
 [ext_resource type="Script" uid="uid://c83tv82q68fng" path="res://features/player/state_machine/states/state_walk.gd" id="5_qlg0r"]
 [ext_resource type="PackedScene" uid="uid://cmuq6mohtfvvv" path="res://components/hurt_box/hurt_box.tscn" id="5_v0hdl"]
-[ext_resource type="Texture2D" uid="uid://csveikeg0o764" path="res://props/sprites/props.png" id="6_lrnek"]
+[ext_resource type="Texture2D" uid="uid://csveikeg0o764" path="res://props/pot/sprites/props.png" id="6_lrnek"]
 [ext_resource type="Script" uid="uid://g1gogq81cg3g" path="res://features/player/state_machine/states/state_attack.gd" id="6_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://d2tomd4o7s5qc" path="res://features/player/audio/SwordSwoosh.wav" id="8_smehm"]
 [ext_resource type="Script" uid="uid://bp8hdgwlisumf" path="res://features/player/components/player_interaction_host.gd" id="10_d2wvv"]

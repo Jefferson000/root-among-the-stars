@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cmgq2ncgj6ec3"]
 
 [ext_resource type="Script" uid="uid://cweqabunhfx0" path="res://props/plant/plant.gd" id="1_djs60"]
-[ext_resource type="Texture2D" uid="uid://csveikeg0o764" path="res://props/sprites/props.png" id="1_qsug5"]
+[ext_resource type="Texture2D" uid="uid://csveikeg0o764" path="res://props/pot/sprites/props.png" id="1_qsug5"]
 [ext_resource type="PackedScene" uid="uid://b78etmr0eexd3" path="res://components/hit_box/hit_box.tscn" id="2_djs60"]
 [ext_resource type="PackedScene" uid="uid://btcxa4tuf0h1j" path="res://features/interactables/thowable/throwable.tscn" id="4_gpnxs"]
 

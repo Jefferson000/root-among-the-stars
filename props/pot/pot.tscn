@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://sa1lhoafjj67"]
 
 [ext_resource type="Script" uid="uid://odiamo3fd0xk" path="res://props/pot/pot.gd" id="1_48h1u"]
-[ext_resource type="Texture2D" uid="uid://csveikeg0o764" path="res://props/sprites/props.png" id="1_p1qxa"]
+[ext_resource type="Texture2D" uid="uid://csveikeg0o764" path="res://props/pot/sprites/props.png" id="1_p1qxa"]
 [ext_resource type="AudioStream" uid="uid://pw5ywvufeoxb" path="res://props/pot/audio/pot_destroy.wav" id="3_q30ba"]
 [ext_resource type="PackedScene" uid="uid://btcxa4tuf0h1j" path="res://features/interactables/thowable/throwable.tscn" id="4_wksmc"]
 
