@@ -63,3 +63,8 @@ Dialog Manager:
 
 Máquina de estados:
     https://www.youtube.com/results?search_query=maquina+estados+godot+plugin
+
+
+************ Blogs de pixel art ************
+https://www.slynyrd.com/blog/2019/10/21/pixelblog-22-top-down-character-sprites
+https://www.slynyrd.com/blog/2025/5/23/pixelblog-56-top-down-character-attack-animation
