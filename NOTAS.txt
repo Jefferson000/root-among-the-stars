@@ -49,10 +49,13 @@ EXPORT
 ONREADY
 REGULAR VAR
 
+************* Buenos canales *************
+https://www.youtube.com/@christinec_devs
 
 ************** AGREGAR **************
-TODO ADDON
-SIGNAL VISUALIZER ADDON
+TODO                ADDON
+SIGNAL VISUALIZER   ADDON
++
 
 ************** REEMPLAZAR **************
 Dialog Manager:
