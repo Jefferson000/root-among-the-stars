@@ -48,3 +48,15 @@ CONSTANTS
 EXPORT
 ONREADY
 REGULAR VAR
+
+
+************** AGREGAR **************
+TODO ADDON
+SIGNAL VISUALIZER ADDON
+
+************** REEMPLAZAR **************
+Dialog Manager:
+    https://www.youtube.com/watch?v=wzbLpcRD8xE
+
+Máquina de estados:
+    https://www.youtube.com/results?search_query=maquina+estados+godot+plugin

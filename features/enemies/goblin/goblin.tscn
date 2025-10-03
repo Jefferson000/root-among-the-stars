@@ -1,7 +1,8 @@
-[gd_scene load_steps=43 format=3 uid="uid://bsv0oe81ki3tq"]
+[gd_scene load_steps=44 format=3 uid="uid://bsv0oe81ki3tq"]
 
 [ext_resource type="Script" uid="uid://bcrdbrs3jt18b" path="res://features/enemies/enemy.gd" id="1_3l85o"]
 [ext_resource type="PackedScene" uid="uid://cmuq6mohtfvvv" path="res://components/hurt_box/hurt_box.tscn" id="2_vb6ko"]
+[ext_resource type="PackedScene" uid="uid://b7xlilgec78e2" path="res://features/enemies/pathfinder/pathfinder.tscn" id="2_wc0iw"]
 [ext_resource type="PackedScene" uid="uid://b78etmr0eexd3" path="res://components/hit_box/hit_box.tscn" id="3_uacx4"]
 [ext_resource type="Texture2D" uid="uid://cteemg1w2dwpu" path="res://features/player/sprites/Shadow.png" id="4_fb3j6"]
 [ext_resource type="Texture2D" uid="uid://bb45owwj8lvp1" path="res://features/enemies/goblin/sprites/goblin.png" id="5_ehmqu"]
@@ -807,6 +808,7 @@ drops = Array[ExtResource("14_jdd1u")]([SubResource("Resource_qq6r0"), SubResour
 script = ExtResource("16_v3mb8")
 vision_area = NodePath("../../VisionArea")
 attack_area = NodePath("../../Sprite2D/AttackHurtBox")
+state_aggro_duration = 5.0
 next_state = NodePath("../Idle")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -830,3 +832,5 @@ metadata/_custom_type_script = "uid://dvpbdirwgax2p"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea"]
 polygon = PackedVector2Array(-16, 0, 16, 0, 128, 128, -128, 128)
+
+[node name="Pathfinder" parent="." instance=ExtResource("2_wc0iw")]

@@ -1,5 +1,6 @@
 class_name EnemyStateChase extends EnemyState
 
+const PATH_FINDER : PackedScene = preload("res://features/enemies/pathfinder/pathfinder.tscn")
 
 @export var anim_name : String = "chase"
 @export var chase_speed : float = 40.0
@@ -14,6 +15,7 @@ class_name EnemyStateChase extends EnemyState
 var _timer : float = 0.0
 var _direction : Vector2
 var _can_see_player : bool = false
+var _path_finder : PathFinder
 
 ## What happens when we initialize this state?
 func init() -> void:
@@ -24,6 +26,8 @@ func init() -> void:
 
 ## What happens when the enemy enters this State?
 func enter() -> void:
+	_path_finder = PATH_FINDER.instantiate() as PathFinder
+	enemy.add_child( _path_finder )
 	_timer = state_aggro_duration
 	enemy.update_animation( anim_name )
 	_can_see_player = true
@@ -33,6 +37,7 @@ func enter() -> void:
 
 ## What happens when the enemy exits this State?
 func exit() -> void:
+	_path_finder.queue_free()
 	if attack_area:
 		attack_area.monitoring = false
 	_can_see_player = false
@@ -42,9 +47,10 @@ func exit() -> void:
 func process( _delta : float ) -> EnemyState:
 	if PlayerManager.player.hp <= 0:
 		return next_state
-	var new_dir : Vector2 = enemy.global_position.direction_to( PlayerManager.player.global_position )
-	_direction = lerp( _direction, new_dir, turn_rate )
+
+	_direction = lerp( _direction, _path_finder.move_direction, turn_rate)
 	enemy.velocity = _direction * chase_speed
+
 	if enemy.set_direction( _direction ):
 		enemy.update_animation( anim_name )
 

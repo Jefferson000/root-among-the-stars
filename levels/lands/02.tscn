@@ -39,7 +39,10 @@ target_transition_area = "TopLevelTransition"
 side = 3
 
 [node name="Goblin" parent="." instance=ExtResource("6_wvwyy")]
-position = Vector2(152, 128)
+position = Vector2(88, 112)
+
+[node name="Goblin2" parent="." instance=ExtResource("6_wvwyy")]
+position = Vector2(88, 336)
 
 [node name="TreasureChest4" parent="." instance=ExtResource("7_q55yv")]
 position = Vector2(224, 136)
@@ -49,14 +52,20 @@ quantity = 2
 [node name="Pot" parent="." instance=ExtResource("9_wdjr2")]
 position = Vector2(160, 208)
 
-[node name="Pot2" parent="." instance=ExtResource("9_wdjr2")]
-position = Vector2(160, 224)
-
 [node name="Pot3" parent="." instance=ExtResource("9_wdjr2")]
 position = Vector2(160, 240)
 
 [node name="Pot4" parent="." instance=ExtResource("9_wdjr2")]
 position = Vector2(160, 240)
+
+[node name="Pot5" parent="." instance=ExtResource("9_wdjr2")]
+position = Vector2(176, 224)
+
+[node name="Pot6" parent="." instance=ExtResource("9_wdjr2")]
+position = Vector2(144, 224)
+
+[node name="Pot2" parent="." instance=ExtResource("9_wdjr2")]
+position = Vector2(160, 224)
 
 [node name="Plant" parent="." instance=ExtResource("5_qsp5h")]
 position = Vector2(168, 261)
